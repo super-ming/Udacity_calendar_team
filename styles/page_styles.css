@@ -21,10 +21,23 @@ body{
 }
 .details-main{
     float: left;
-    width: 78%;
+    width: 70%;
     height: 500px;
-    padding 5px;
+    padding: 5px;
+    background-color: aqua;
 }
 .details-aside{
     float: left;
+    height: 500px;
+    width: 28%;
+    padding: 5px;
+    background-color: chartreuse;
+}
+footer{
+    clear: both;
+    background-color: darkgoldenrod;
+    height: 110px;
+}
+.footer-nav{
+    float: right;
 }
