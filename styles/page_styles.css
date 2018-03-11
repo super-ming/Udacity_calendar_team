@@ -155,6 +155,9 @@ footer{
     float: left;
 }
         /* list view */
-.event-list-view{
+.event-list-view-hidden{
     visibility: hidden;
+}
+.event-list-view{
+    width: 90%;
 }
