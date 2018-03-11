@@ -5,52 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/page_styles.css">
+    <base target="_blank">
     <title>Event Details</title>
 </head>
 <body>
     <div class="wrapper">
         <header class="global-header">
-            <nav role="navigation" class="global-nav">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Support</li>
-                </ul>
-            </nav>
+            <div class="header-wrapper">
+                <div id="website-title">
+                    Tech Event Near Me
+                </div>
+                <nav role="navigation" class="global-nav">
+                    <ul id="navigation">
+                        <li><a href="" target = "_self">Home</a></li>
+                        <li><a href="" target = "_self">About</a></li>
+                        <li><a href="" target = "_self">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <main class="details-main">
-            <figure class="event-photo">
-
-            </figure>
+            <!--<figure class="event-photo">
+                
+            </figure>-->
             <div class="event-headline">
-                <h1>Event Headline</h1>
-            </div>
-            <div class="event-date">
-
+                <h1><!--Event Headline-->Washington Project Meeting #1</h1>
             </div>
             <article class="event-description">
-
+                <p>Lets meet and go over the Washington Group Project details. <br>For those of you who cannot attend at this location, I will have video feed available on Google Hangouts so you can join the conversation. Link here: 
+                <a href="https://hangouts.google.com/group/EcKwOcNSPDOuI2T22">https://hangouts.google.com/group/EcKwOcNSPDOuI2T22</a></p>
+                
+                <p>Also, I made a Google Drive publicly available so we can all add and update content in a central location (we will use GitHub for the actual code and project assets). In this drive you will find an early version of an agenda for our first meeting. <br>Feel free to add some items or notes. 
+                Link to Google Drive: <a href="https://drive.google.com/drive/folders/1cq_knSmqbPCCkO39bBVs04ULyGFpYITh?usp=sharing">https://drive.google.com/drive/folders/1cq_knSmqbPCCkO39bBVs04ULyGFpYITh?usp=sharing</a></p>
+                
+                <p>I am hoping this project can be as inclusive as possible and that everyone can have a chance to work on the project no matter their time constraints.</p>
             </article>
         </main>
         <aside class="details-aside">
-            <div class="event-address">
-                <h1>Address</h1>
+            <div class="event-date">
+                <h2>When:</h2>
+                <!--Date-->March 4 2018
+                <!--Time-->2:00 PM – 5:00 PM
+            </div>
+            <div class="event-location">
+                <h2>Where:</h2>
+                <!--Address-->500 Westlake Ave N, Seattle, WA 98109-4303, United States
+                <div class="map">
+                    <!--Map-->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.1395948886043!2d-122.34028318436891!3d47.623417679185785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901539d13c246b%3A0xbe84c5d3de10b089!2s500+Westlake+Ave+N%2C+Seattle%2C+WA+98109!5e0!3m2!1sja!2sus!4v1520748670542" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
             </div>
             <div class="event-contacts">
-                <h1>Contacts</h1>
+                <h2>Contact(s):</h2>
+                <!--Organiser--><a href="https://www.facebook.com/events/2022931674638015/">Grow w/ Google x Udacity - Washington State</a>
             </div>
         </aside>
         <footer>
             <div class="copywrite">
-
-            </div>
-            <div class="footer-nav">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Support</li>
-                </ul>
-            </div>
+                &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Udacity GwG Washington State Team
+            </div>   
         </footer>
     </div> <!--End wrapper-->
 </body>

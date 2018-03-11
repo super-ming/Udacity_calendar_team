@@ -1,43 +1,144 @@
 /* global styles */
+@import url('https://fonts.googleapis.com/css?family=Mina');
+
 body{
-    margin: 40px;
+    max-width: 98%;
+    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff; 
+    color: #2A3E49;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.5em;
+    background-color: #f7f7f7; 
 }
+    h1{
+        font-size: 150%;
+        font-weight: bold;
+    }
+    h2{
+        font-size: inherit;
+        font-weight: bold;
+    }
 .wrapper{
-    max-width: 1300px;
     width: 100%;
-    margin: 0 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.header-wrapper{
+    margin-left: 10%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+main, aside{
+    min-height: 85vh;
 }
 .global-header{
-    background-color: blue;
+    background: linear-gradient(92.78deg, #8FBEDB 1.88%, rgba(222, 236, 244, 0.29337) 75.05%, rgba(255, 255, 255, 0) 98.6%), #1BB24E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    height: 200px;
+    height: 30px;
+    padding: 15px;
 }
-.global-nav{
-    background-color: brown;
-    width: 100%;
-    height: 100px;
-}
+    #website-title{
+        color: #2A3840;
+        font-family: 'Mina', sans-serif;
+        font-size: 2.5em;
+        font-weight: bold;
+        float: left;
+    }
+    .global-nav{
+    background-color: transparent;
+    color: #2a3840;
+    font-size: 110%;
+    width: 42%;
+    height: 100%;
+    float: right;
+    }
+    #navigation{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        float: right;
+    }
+        #navigation li{
+        float: left;
+        padding: 0 5px;
+        }
+        #navigation li a {
+        text-decoration: none;
+        }  
+        #navigation li a:hover {
+        color: #fff;
+        }
+/*Event title, Description*/
 .details-main{
     float: left;
-    width: 70%;
-    height: 500px;
-    padding: 5px;
-    background-color: aqua;
+    width: 65%;
+    height: auto;
+    margin: 0 1%;
+    padding: 0 2%;
+    
+    overflow-wrap : break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
 }
+    .event-headline{
+        height: 14%;
+        border: solid #f7f7f7 1px;
+    }
+    .event-description p{
+        margin-top: 1em;
+    }
+/*Date, Location, Contacts*/    
 .details-aside{
     float: left;
     height: 500px;
-    width: 28%;
-    padding: 5px;
-    background-color: chartreuse;
+    width: 23%;
+    position: relative;
+    margin: 0 1%;
+    padding: 0 2%;
+    background-color: white;
 }
+    .details-aside div{
+        margin-bottom: 2em;
+    }
+    /*Google Map*/
+    .map {
+        position: relative;
+        margin-top: 1em;
+        padding-top: 30px;
+        padding-bottom: 55%;
+        height: 0;
+        overflow: hidden;
+        }
+         
+        .map iframe,
+        .map object,
+        .map embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        }
 footer{
     clear: both;
-    background-color: darkgoldenrod;
-    height: 110px;
+    background-color: #f7f7f7;
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.footer-nav{
-    float: right;
-}
+    .copywrite{
+    color: #919699;
+    font-size: small;
+    font-weight: normal;
+    }
+
