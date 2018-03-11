@@ -141,4 +141,15 @@ footer{
     font-size: small;
     font-weight: normal;
     }
-
+.cal-main{
+    height: 500px;
+    max-width: 68%;
+    background-color: greenyellow;
+    float: right;
+}
+.cal-aside{
+    height: 500px;
+    width: 28%;
+    background-color:rebeccapurple;
+    float: left;
+}
