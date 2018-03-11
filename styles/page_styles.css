@@ -141,6 +141,7 @@ footer{
     font-size: small;
     font-weight: normal;
     }
+    /* landing page styles */
 .cal-main{
     height: 500px;
     max-width: 68%;
@@ -152,4 +153,8 @@ footer{
     width: 28%;
     background-color:rebeccapurple;
     float: left;
+}
+        /* list view */
+.event-list-view{
+    visibility: hidden;
 }
