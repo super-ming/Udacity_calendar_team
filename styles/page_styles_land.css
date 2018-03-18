@@ -65,7 +65,8 @@ float: right;
 
 #navigation li{
     display:inline-block;
-    padding: 7px;
+    padding: 0px;
+    margin-right: 10%;
 }
 
 #navigation li a {
@@ -74,4 +75,32 @@ float: right;
 
 #navigation li a:hover {
 color: #fff;
+}
+
+main, aside {
+    margin: 1%;
+    height: 500px;
+    color: #b6bbc4;
+}
+
+.calendar {
+    float: right;
+    width: 68%;
+    background-color: #1e62db;
+}
+
+.filter {
+    float: left;
+    width: 28%;
+    background-color: rebeccapurple;
+}
+
+#filter-type li {
+    list-style-type: none;
+    color: #b6bbc4;
+    margin: 5%;
+}
+
+.copywrite {
+    text-align: center;
 }
