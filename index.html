@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/page_styles.css">
-
-    <title>title yo!</title>
+    <title>What's the next tech event near me?</title>
+    <script src="scripts.js"></script>
 </head>
 <body>
+    <div class="wrapper">
+        <header class="global-header">
+            <div>
+                <div id="website-title">
+                    What is the next tech event in Seattle?
+                </div>
+                <nav role="navigation" class="global-nav">
+                    <ul id="navigation">
+                        <li><a href = "#">Home</a></li>
+                        <li><a href = "#">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     <main class="cal-main">
         <!-- code to toggle classes -->
+        <h1> Calendar here </h1>
         <div class="cal">
             <!-- cal api -->
+
         </div>
         <div class="event-list-view">
             <div class="list-box">Event</div>
@@ -22,8 +38,17 @@
         </div>
     </main>
     <aside id="filters" class="cal-aside">
-        <!-- event filters -->
+        <ul id="filters-type">
+            <li> By Neighborhood </li>
+            <li> By Type </li>
+            <li> By Language </li>
+            <li> By Tag </li>
+        </ul>
     </aside>
-    
+    <footer>
+        <div class="copywrite">
+            &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Udacity GwG Washington State Team
+        </div>
+    </footer>
 </body>
 </html>
