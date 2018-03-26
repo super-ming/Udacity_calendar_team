@@ -10,7 +10,7 @@ body{
     padding: 0;
     font-size: 15px;
     line-height: 1.5em;
-    background-color: #f7f7f7; 
+    background-color: #f7f7f7;
 }
     h1{
         font-size: 150%;
@@ -71,7 +71,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         }
         #navigation li a {
         text-decoration: none;
-        }  
+        }
         #navigation li a:hover {
         color: #fff;
         }
@@ -82,7 +82,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     height: auto;
     margin: 0 1%;
     padding: 0 2%;
-    
+
     overflow-wrap : break-word;
     overflow-x: hidden;
     overflow-y: auto;
@@ -95,7 +95,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     .event-description p{
         margin-top: 1em;
     }
-/*Date, Location, Contacts*/    
+/*Date, Location, Contacts*/
 .details-aside{
     float: left;
     height: 500px;
@@ -117,7 +117,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         height: 0;
         overflow: hidden;
         }
-         
+
         .map iframe,
         .map object,
         .map embed {
@@ -142,10 +142,11 @@ footer{
     font-weight: normal;
     }
     /* landing page styles */
+
 .cal-main{
     height: 500px;
     max-width: 68%;
-    background-color: greenyellow;
+    background-color: #1e62db;
     float: right;
 }
 .cal-aside{
@@ -160,4 +161,11 @@ footer{
 }
 .event-list-view{
     width: 90%;
+    visibility: hidden;
+}
+
+#filters-type li {
+    list-style-type: none;
+    color: #b6bbc4;
+    margin: 5%;
 }
