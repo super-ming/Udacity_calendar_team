@@ -23,32 +23,86 @@
                 </nav>
             </div>
         </header>
-    <main class="cal-main">
-        <!-- code to toggle classes -->
-        <h1> Calendar here </h1>
-        <div class="cal">
-            <!-- cal api -->
+        <main class="cal-main">
+            <!-- code to toggle classes -->
+            <h1> Calendar here </h1>
+            <div class="cal">
+                <!-- cal api -->
 
-        </div>
-        <div class="event-list-view">
-            <div class="list-box">Event</div>
-            <div class="list-box"></div>
-            <div class="list-box"></div>
-            <div class="list-box"></div>
-        </div>
-    </main>
-    <aside id="filters" class="cal-aside">
-        <ul id="filters-type">
-            <li> By Neighborhood </li>
-            <li> By Type </li>
-            <li> By Language </li>
-            <li> By Tag </li>
-        </ul>
-    </aside>
-    <footer>
-        <div class="copywrite">
-            &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Udacity GwG Washington State Team
-        </div>
-    </footer>
+            </div>
+            <div class="event-list-view">
+                <div class="list-box">Event</div>
+                <div class="list-box"></div>
+                <div class="list-box"></div>
+                <div class="list-box"></div>
+            </div>
+        </main>
+        <aside id="filters" class="cal-aside">
+            <form id="filters-type">
+                <h4 class="filter-title">By Neighborhood</h4>
+                <div class="filter">
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-neighborhood-capitalhill" name="neighborhood" value="false">
+                        <label for="filter-neighborhood-capitalhill">Capital Hill</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-neighborhood-downtown" name="neighborhood" value="false">
+                        <label for="filter-neighborhood-downtown">Downtown</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-neighborhood-belltown" name="neighborhood" value="false">
+                        <label for="filter-neighborhood-belltown">Belltown</label>
+                    </div>
+                </div>
+
+                <h4 class="filter-title">By Language</h4>
+                <div class="filter">
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-lang-javascript" name="language" value="false">
+                        <label for="filter-lang-javascript">Javascript</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-lang-python" name="language" value="false">
+                        <label for="filter-lang-python">Python</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-lang-css" name="language" value="false">
+                        <label for="filter-lang-css">CSS</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-lang-html" name="language" value="false">
+                        <label for="filter-lang-html">HTML</label>
+                    </div>
+                </div>
+
+                <h4 class="filter-title">By Tag</h4>
+                <div class="filter">
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-tag-frontend" name="tag" value="false">
+                        <label for="filter-tag-frontend">Frontend Development</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-tag-backend" name="tag" value="false">
+                        <label for="filter-tag-backend">Backend Development</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-tag-women" name="tag" value="false">
+                        <label for="filter-tag-women">Women In Tech</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter-tag-new" name="tag" value="false">
+                        <label for="filter-tag-new">New In Tech</label>
+                    </div>
+                </div>
+            </form>
+        </aside>
+        <footer>
+            <div class="copywrite">
+                &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Udacity GwG Washington State Team
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./javascripts/scripts.js"></script>
 </body>
 </html>

@@ -164,8 +164,20 @@ footer{
     visibility: hidden;
 }
 
-#filters-type li {
-    list-style-type: none;
+#filters-type {
     color: #b6bbc4;
     margin: 5%;
 }
+
+#filters-type H4 {
+    margin: 0;
+}
+
+#filters-type:hover {
+    cursor: pointer;
+}
+
+.filter {
+    display: none;
+}
+
