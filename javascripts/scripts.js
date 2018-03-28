@@ -18,7 +18,7 @@ $(document).ready(function() {
             for(var i=0;i<res.events.length;i++) {
                 var event = res.events[i];
                 console.dir(event);
-                s += "<li><a href='" + event.url + "'>" + event.name.text + "</a> - " + "</li>";
+                s += "<li><a href='" + event.url + "'>" + event.name.text + "</a>" + "</li>";
             }
             s += "</ul>";
             $events.html(s);

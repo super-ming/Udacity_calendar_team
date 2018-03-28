@@ -24,11 +24,7 @@
         </header>
         <main class="cal-main">
             <!-- code to toggle classes -->
-            <h1>Upcoming Technology Events in Seattle This Week</h1>
-            <div class="event-list-view">
-                <!-- cal Eventbrite api to get a list of events in Seattle -->
-                <section id='events'></section>
-            </div>
+
             <section class="cal">
                 <h1> <!-- Name of Month --> </h1>
                 <div class="row-header">
@@ -45,7 +41,16 @@
                 </div>
             </section>
         </main>
-        <aside id="filters" class="cal-aside">
+
+        <aside class="cal-aside-eventList">
+            <h1>Upcoming Technology Events in Seattle This Week</h1>
+            <div class="event-list-view">
+                <!-- cal Eventbrite api to get a list of events in Seattle -->
+                <section id='events'></section>
+            </div>   
+        </aside> 
+
+        <aside id="filters" class="cal-aside-filter">
             <h1>Event Filter</h1>
             <form id="filters-type">
                 <h4>By Neighborhood</h4>
