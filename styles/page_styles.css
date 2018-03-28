@@ -164,6 +164,21 @@ footer{
     float: right;
 }
 
+.cal-nav {
+    text-align: center;
+}
+
+.cal-nav h2 {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: .6em .8em;
+}
+
+.cal-nav i {
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+
 .cal .row-header {
     text-align: center;
 }
