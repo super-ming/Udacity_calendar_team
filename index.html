@@ -24,7 +24,11 @@
         </header>
         <main class="cal-main">
             <!-- code to toggle classes -->
-
+            <h1>Upcoming Technology Events in Seattle This Week</h1>
+            <div class="event-list-view">
+                <!-- cal Eventbrite api to get a list of events in Seattle -->
+                <section id='events'></section>
+            </div>
             <section class="cal">
                 <h1> <!-- Name of Month --> </h1>
                 <div class="row-header">
@@ -40,21 +44,13 @@
                     <!--calendar.js to fill in grid based on current day-->
                 </div>
             </section>
-            <h1> Calendar here </h1>
-            <div class="cal">                
-
-            </div>
-            <h1> Technology Event List in Seattle </h1>
-            <div class="event-list-view">
-                <!-- cal Eventbrite api to get a list of events in Seattle -->
-                <section id='events'></section>
-
-            </div>
         </main>
         <aside id="filters" class="cal-aside">
+            <h1>Event Filter</h1>
             <form id="filters-type">
-                <h4 class="filter-title">By Neighborhood</h4>
-                <div class="filter">
+                <h4>By Neighborhood</h4>
+                <!-- <h4 class="filter-title">By Neighborhood</h4> -->
+                <!-- <div class="filter"> -->
                     <div class="filter-item">
                         <input type="checkbox" id="filter-neighborhood-capitalhill" name="neighborhood" value="false">
                         <label for="filter-neighborhood-capitalhill">Capitol Hill</label>
@@ -67,10 +63,10 @@
                         <input type="checkbox" id="filter-neighborhood-belltown" name="neighborhood" value="false">
                         <label for="filter-neighborhood-belltown">Belltown</label>
                     </div>
-                </div>
-
-                <h4 class="filter-title">By Language</h4>
-                <div class="filter">
+                <!-- </div> -->
+                <h4>By Language</h4>
+                <!-- <h4 class="filter-title">By Language</h4> -->
+             <!--    <div class="filter"> -->
                     <div class="filter-item">
                         <input type="checkbox" id="filter-lang-javascript" name="language" value="false">
                         <label for="filter-lang-javascript">Javascript</label>
@@ -87,10 +83,11 @@
                         <input type="checkbox" id="filter-lang-html" name="language" value="false">
                         <label for="filter-lang-html">HTML</label>
                     </div>
-                </div>
+                <!-- </div> -->
 
-                <h4 class="filter-title">By Tag</h4>
-                <div class="filter">
+                <h4>By Tag</h4>
+                <!-- <h4 class="filter-title">By Tag</h4> -->
+               <!--  <div class="filter"> -->
                     <div class="filter-item">
                         <input type="checkbox" id="filter-tag-frontend" name="tag" value="false">
                         <label for="filter-tag-frontend">Frontend Development</label>
@@ -107,7 +104,7 @@
                         <input type="checkbox" id="filter-tag-new" name="tag" value="false">
                         <label for="filter-tag-new">New In Tech</label>
                     </div>
-                </div>
+                <!-- </div> -->
             </form>
         </aside>
         <footer>
