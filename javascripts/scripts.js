@@ -69,5 +69,5 @@ $(document).ready(function() {
 
 // Load header
 $(function() {
-    $(".global-header").load("../header.html");
+    $(".global-header").load("./header.html");
   });
