@@ -241,7 +241,7 @@ input:checked + .slider:after
 
 .cal-main{
     height: auto;
-    width: 70%;
+    width: 80%;
     background-color: transparent;
     float: right;
     flex-direction: column;
@@ -252,9 +252,9 @@ input:checked + .slider:after
     background-color:#FFFFFFFF;
     float: left;
 }
-.cal-aside-eventList{
+.cal-eventList{
     height: auto;
-    width: 37%;
+    width: 80%;
     background-color:#FFFFFFFF;
     display: none;
 
