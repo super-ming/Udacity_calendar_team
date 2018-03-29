@@ -2,6 +2,26 @@
 
 var neighborhoodFilter = $(".filter-title");
 
+//when the toggle button is clicked, run the toggleView function
+document.getElementById('button').addEventListener('click', function () {
+    toggleView();
+});
+
+/*If calendar is in view, hide it from view and display list view.
+If the list view is in view, hide it from view and display calendar view.*/
+function toggleView(){
+    let calendarView = document.getElementById("calendarView");
+    let listView = document.getElementById("listView");
+    if (calendarView.style.display === "none") {
+        calendarView.style.display = "inline-block";
+        listView.style.display = "none";
+    } else {
+        calendarView.style.display = "none";
+        listView.style.display = "inline-block";
+    }
+};
+
+
 neighborhoodFilter.click(function() {
     $(this).next().toggle();
 });
@@ -26,6 +46,8 @@ $(document).ready(function() {
             $events.html("<p>Sorry, there are no upcoming events.</p>");
         }
     });
+
+
 
 
 });
