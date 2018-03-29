@@ -1,6 +1,41 @@
 
 
 var neighborhoodFilter = $(".filter-title");
+let $toggler = $("#toggleButton");
+
+//Add event listener for click to toggle either calendar or list view
+$toggler.click(function(){
+    toggleView();
+});
+
+function toggleView(){
+    let calView = $('#calendarView');
+    let listView = $('#listView');
+    if (calView.css("display") === "none"){
+        calView.attr("style", "display:inline-block");
+        listView.hide();
+    } else {
+        calView.hide();
+        listView.attr("style", "display:inline-block");
+    }
+};
+
+//Vanilla javascript version
+/*document.getElementById('toggleButton').addEventListener('click', function () {
+    toggleView();
+});
+
+function toggleView(){
+    let calView = document.getElementById("calendarView");
+    let listView = document.getElementById("listView");
+    if (calView.style.display === "none") {
+        calView.style.display = "inline-block";
+        listView.style.display = "none";
+    } else {
+        calView.style.display = "none";
+        listView.style.display = "inline-block";
+    }
+};*/
 
 neighborhoodFilter.click(function() {
     $(this).next().toggle();
@@ -26,6 +61,8 @@ $(document).ready(function() {
             $events.html("<p>Sorry, there are no upcoming events.</p>");
         }
     });
+
+
 
 
 });

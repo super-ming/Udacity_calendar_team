@@ -23,10 +23,15 @@
                 </nav>
             </div>
         </header>
+
         <main class="cal-main">
             <!-- code to toggle classes -->
 
-            <section class="cal">
+            <label class="switch">
+                <input id= "toggleButton" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <section id= "calendarView" class="cal">
                 <div class="cal-nav">
                     <i class="material-icons cal-nav-back">navigate_before</i>
                     <h2> <!-- Name of Month --> </h2>
@@ -45,16 +50,17 @@
                     <!--calendar.js to fill in grid based on current day-->
                 </div>
             </section>
-        </main>
 
-        <aside class="cal-aside-eventList">
-            <h1>Upcoming Technology Events in Seattle This Week</h1>
-            <div class="event-list-view">
+
+            <section id= "listView" class="cal-aside-eventList">
+
+                <h1>Upcoming Technology Events in Seattle This Week</h1>
+                <div class="event-list-view">
                 <!-- cal Eventbrite api to get a list of events in Seattle -->
                 <section id='events'></section>
-            </div>   
-        </aside> 
-
+                </div>
+            </section>
+        </main>
         <aside id="filters" class="cal-aside-filter">
             <h1>Event Filter</h1>
             <form id="filters-type">
