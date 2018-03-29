@@ -32,11 +32,11 @@ createCalendar(date, $monthHeader, $calendarDaysGrid);
 
 function createCalendar(date, $headerDOM, $calendarGridDOM) {
 //remove existing cal grid if there is one.
-$calendarGridDOM.empty();
+    $calendarGridDOM.empty();
 
 //append elements
-$headerDOM.text(getCurrentMonth(date).toUpperCase() + ' ' + date.getFullYear());
-$calendarGridDOM.append(getCalendarGrid(date, today));
+    $headerDOM.text(getCurrentMonth(date).toUpperCase() + ' ' + date.getFullYear());
+    $calendarGridDOM.append(getCalendarGrid(date, today));
 
 
 //returns the a string of the month based on the parameter's date object
@@ -54,13 +54,28 @@ $calendarGridDOM.append(getCalendarGrid(date, today));
         var lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() +1, 0 );
         var firstWeekDay = firstDayOfMonth.getDay() +1;
         var calendarDate = firstDayOfMonth;
+        var currMonthEventData = JSON.parse(sessionStorage.getItem("briteEvents"))[date.getMonth()];
+        var currDayEventData;
+        //console.log(currMonthEventData, ' MONTH: ', date.getMonth());
+        //console.log(new Date(currMonthEventData[0].start.local).getDay());
+        //console.log(currMonthEventData.map(function(event){return event.start.local.substring(8,10)}));
 
         for(var dayBox=1; dayBox <= 35; dayBox++) {
             if (dayBox >= firstWeekDay &&
                 dayBox-firstWeekDay <
                 lastDayOfMonth.getDate())
             {
-                daysArray.push(createTimeElement(calendarDate, today));
+
+                currDayEventData = currMonthEventData.filter(function(event) {
+                    //console.log(calendarDate.getDate(),': ', Number(event.start.local.substring(8,10)) === calendarDate.getDate() );
+                    return Number(event.start.local.substring(8,10)) === calendarDate.getDate();
+                });
+
+
+                daysArray.push(createTimeElement(calendarDate, today)
+                    .append(createEventDetailsElement(currDayEventData))
+                );
+
                 calendarDate.setDate(calendarDate.getDate() + 1);
 
             } else {
@@ -86,7 +101,6 @@ $calendarGridDOM.append(getCalendarGrid(date, today));
                 .attr(attrObj)
                 .text(calendarDate.getDate());
 
-
             //HTML datetime attr syntax YYYY-MM-DDThh:mm:ssTZD
             //converts Javascript's Date object format to HTML attr format
             function datetimeFormatConverter(date) {
@@ -101,14 +115,19 @@ $calendarGridDOM.append(getCalendarGrid(date, today));
                 return date.getFullYear() + '-' + month + '-' + day;
             }
         }
+
+        function createEventDetailsElement(currDayEventData) {
+            var names = $('<ul>').append(currDayEventData.map(function(event){
+                return $('<li>').text(event.name.text.substring(0,40).concat(event.name.text.length > 40? ('...'):''));
+            }));
+
+            return $('<div class="event-details">').append(names);
+        }
     };
 }
 
 
-
-
-
-
-
+//var storage = JSON.parse(sessionStorage.getItem("briteEvents"));
+//storage.map(function(event) {console.log(event)});
 
 

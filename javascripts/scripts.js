@@ -50,6 +50,10 @@ $(document).ready(function() {
     $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=Seattle&q=Technology&date_modified.keyword=this_week', function(res) {
         if(res.events.length) {
             var s = "<ul class='eventList'>";
+            //create an array of event by month
+            //store those event in the local storage
+            sessionStorage.setItem('briteEvents', JSON.stringify(briteEventByMonthObject(res.events)));
+
             for(var i=0;i<res.events.length;i++) {
                 var event = res.events[i];
                 console.dir(event);
@@ -67,7 +71,22 @@ $(document).ready(function() {
 
 });
 
+//gets events and returns an object with events organized by month
+//is zero based just like Date object's getMonth() method.
+//january is index 0
+function briteEventByMonthObject(events) {
+    var byMonth = [];
+
+    for(var month =0; month < 12; month++) {
+        byMonth.push(events.filter(function(event) {
+            return Number(event.start.local.substring(5,7))-1 === month;
+        }));
+    }
+
+    return byMonth;
+}
+
 // Load header
 $(function() {
-    $(".global-header").load("../header.html");
+    $(".global-header").load("./header.html");
   });
