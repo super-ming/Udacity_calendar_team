@@ -1,26 +1,41 @@
 
 
 var neighborhoodFilter = $(".filter-title");
+let $toggler = $("#toggleButton");
 
-//when the toggle button is clicked, run the toggleView function
-document.getElementById('button').addEventListener('click', function () {
+//Add event listener for click to toggle either calendar or list view
+$toggler.click(function(){
     toggleView();
 });
 
-/*If calendar is in view, hide it from view and display list view.
-If the list view is in view, hide it from view and display calendar view.*/
 function toggleView(){
-    let calendarView = document.getElementById("calendarView");
-    let listView = document.getElementById("listView");
-    if (calendarView.style.display === "none") {
-        calendarView.style.display = "inline-block";
-        listView.style.display = "none";
+    let calView = $('#calendarView');
+    let listView = $('#listView');
+    if (calView.css("display") === "none"){
+        calView.attr("style", "display:inline-block");
+        listView.hide();
     } else {
-        calendarView.style.display = "none";
-        listView.style.display = "inline-block";
+        calView.hide();
+        listView.attr("style", "display:inline-block");
     }
 };
 
+//Vanilla javascript version
+/*document.getElementById('toggleButton').addEventListener('click', function () {
+    toggleView();
+});
+
+function toggleView(){
+    let calView = document.getElementById("calendarView");
+    let listView = document.getElementById("listView");
+    if (calView.style.display === "none") {
+        calView.style.display = "inline-block";
+        listView.style.display = "none";
+    } else {
+        calView.style.display = "none";
+        listView.style.display = "inline-block";
+    }
+};*/
 
 neighborhoodFilter.click(function() {
     $(this).next().toggle();

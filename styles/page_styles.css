@@ -245,6 +245,14 @@ input:checked + .slider:after
 
 }
 
+#calendarView {
+    display: inline-block;
+}
+
+#listView {
+    display: none;
+}
+
 .cal-nav {
     text-align: center;
 }
