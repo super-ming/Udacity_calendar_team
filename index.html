@@ -6,29 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/page_styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>What's the next tech event near me?</title>
+    <title>What is the next tech event in Seattle?</title>
 </head>
 <body>
     <div class="wrapper">
         <header class="global-header">
-            <div>
-                <div id="website-title">
-                    What is the next tech event in Seattle?
-                </div>
-                <nav role="navigation" class="global-nav">
-                    <ul id="navigation">
-                        <li><a href = "#" target = "_self">Home</a></li>
-                        <li><a href = "about_page.html" target = "_self">About</a></li>
-                    </ul>
-                </nav>
-            </div>
+           <!-- header.html -->
         </header>
 
         <main class="cal-main">
             <!-- code to toggle classes -->
 
             <label class="switch">
-                <input id= "toggleButton" type="checkbox">
+                <input id="toggleButton" type="checkbox">
                 <span class="slider round"></span>
             </label>
             <section id= "calendarView" class="cal">
@@ -57,7 +47,7 @@
                 <h1>Upcoming Technology Events in Seattle This Week</h1>
                 <div class="event-list-view">
                 <!-- cal Eventbrite api to get a list of events in Seattle -->
-                <section id='events'></section>
+                <section id="events"></section>
                 </div>
             </section>
         </main>
@@ -127,10 +117,11 @@
             <div class="copywrite">
                 &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Udacity GwG Washington State Team
             </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="./javascripts/scripts.js"></script>
+            <script src="./javascripts/calendar.js"></script>
         </footer>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./javascripts/scripts.js"></script>
-    <script src="./javascripts/calendar.js"></script>
+
 </body>
 </html>

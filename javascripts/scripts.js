@@ -66,3 +66,8 @@ $(document).ready(function() {
 
 
 });
+
+// Load header
+$(function() {
+    $(".global-header").load("../header.html");
+  });
