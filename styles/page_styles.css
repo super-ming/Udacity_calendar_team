@@ -291,15 +291,15 @@ input:checked + .slider:after
     display: flex;
     flex-flow: wrap;
 }
-.cal .row-header span, .cal time {
+.row-header span, .cal time {
     width: 13.88%; /* 100percent / 7.25 */
+    margin: .23148%; /* .25percent / 12 */
     box-sizing: border-box;
     background-color: white;
 }
 
 .cal time {
     min-height: 100px;
-    margin: .23148%; /* .25percent / 12 */
     border-radius: .15em;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -309,11 +309,11 @@ input:checked + .slider:after
     box-shadow: none;
 }
 
-.cal time:nth-of-type(7n) {
+.cal time:nth-of-type(7n), .row-header span:last-child {
     margin-right: 0;
 }
 
-.cal time:nth-of-type(7n +1) {
+.cal time:nth-of-type(7n +1), .row-header span:first-child {
     margin-left: 0;
 }
 
