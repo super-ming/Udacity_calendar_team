@@ -99,7 +99,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
 
             return $('<time></time>')
                 .attr(attrObj)
-                .text(calendarDate.getDate());
+                .append($('<div class="date-num">').text(calendarDate.getDate()));
 
             //HTML datetime attr syntax YYYY-MM-DDThh:mm:ssTZD
             //converts Javascript's Date object format to HTML attr format
