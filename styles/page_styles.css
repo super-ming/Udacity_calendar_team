@@ -303,10 +303,21 @@ input:checked + .slider:after
     border-radius: .15em;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    transition: transform .2s;
+}
+.cal time:hover {
+    transform: scale(1.08);
+    cursor: pointer;
 }
 .cal time:not([datetime]) {
     background-color: rgba(27,178,78,.1);
     box-shadow: none;
+    transition: none;
+}
+
+.cal time:not([datetime]) {
+    transform: none;
+    cursor: auto;
 }
 
 .cal time:nth-of-type(7n), .row-header span:last-child {
