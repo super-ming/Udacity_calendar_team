@@ -305,19 +305,14 @@ input:checked + .slider:after
     overflow: hidden;
     transition: transform .2s;
 }
-.cal time:hover {
+.cal time[data-event-count]:hover {
     transform: scale(1.08);
     cursor: pointer;
 }
+
 .cal time:not([datetime]) {
     background-color: rgba(27,178,78,.1);
     box-shadow: none;
-    transition: none;
-}
-
-.cal time:not([datetime]) {
-    transform: none;
-    cursor: auto;
 }
 
 .cal time:nth-of-type(7n), .row-header span:last-child {

@@ -71,8 +71,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                     return Number(event.start.local.substring(8,10)) === calendarDate.getDate();
                 });
 
-
-                daysArray.push(createTimeElement(calendarDate, today)
+                daysArray.push(createTimeElement(calendarDate, today, currDayEventData)
                     .append(createEventDetailsElement(currDayEventData))
                 );
 
@@ -89,13 +88,18 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
         //return an time element wrapped in a jQuery object
         //sets datetime attr to date parameter
         //sets class attr of "today" if date param matches today param
-        function createTimeElement(date, today) {
-            var attrObj = {}, isToday;
+        function createTimeElement(date, today, currDayEventData) {
+            var attrObj = {};
 
             attrObj['datetime'] = datetimeFormatConverter(date);
 
-            isToday = today.toDateString() === date.toDateString();
-            isToday && (attrObj['class'] = 'today');
+            //if this day has an event add a data-event attribute w event count
+            currDayEventData.length > 0
+                && (attrObj['data-event-count'] = currDayEventData.length);
+
+            //if the date is today then add a today class
+            today.toDateString() === date.toDateString()
+                && (attrObj['class'] = 'today');
 
             return $('<time></time>')
                 .attr(attrObj)
