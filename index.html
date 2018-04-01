@@ -14,20 +14,20 @@
            <!-- header.html -->
         </header>
 
-        <main class="cal-main">
+        <main>
             <!-- code to toggle classes -->
 
             <label class="switch">
                 <input id="toggleButton" type="checkbox">
                 <span class="slider round"></span>
             </label>
-            <section id= "calendarView" class="cal">
+            <section id= "calendar-view">
                 <div class="cal-nav">
                     <i class="material-icons cal-nav-back">navigate_before</i>
                     <h2> <!-- Name of Month --> </h2>
                     <i class="material-icons cal-nav-forward">navigate_next</i>
                 </div>
-                <div class="row-header">
+                <div class="cal-row-header">
                     <span>SUNDAY</span>
                     <span>MONDAY</span>
                     <span>TUESDAY</span>
@@ -51,7 +51,7 @@
                 </div>
             </section>
         </main>
-        <aside id="filters" class="cal-aside-filter">
+        <aside id="filters">
             <h1>Event Filter</h1>
             <form id="filters-type">
                 <h4>By Neighborhood</h4>
@@ -117,11 +117,10 @@
             <div class="copywrite">
                 &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Udacity GwG Washington State Team
             </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="./javascripts/scripts.js"></script>
-            <script src="./javascripts/calendar.js"></script>
         </footer>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./javascripts/scripts.js"></script>
+    <script src="./javascripts/calendar.js"></script>
 </body>
 </html>

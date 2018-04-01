@@ -1,9 +1,14 @@
 var date = new Date();
 var today = new Date();
-var $monthHeader = $('.cal h2');
+var $monthHeader = $('#calendar-view h2');
 var $calendarDaysGrid = $('.cal-days');
 var $navBack = $('.cal-nav-back');
 var $navForward = $('.cal-nav-forward');
+var $eventDays;
+
+//add calendar based on today's date.
+//the today variable will change based on use of nav buttons
+createCalendar(date, $monthHeader, $calendarDaysGrid);
 
 //add listener for back navigation button
 //will change calendar to prev month
@@ -25,19 +30,20 @@ $navForward.click(function() {
     createCalendar(backDate, $monthHeader, $calendarDaysGrid);
 });
 
-//add calendar based on today's date.
-//the today variable will change based on use of nav buttons
-createCalendar(date, $monthHeader, $calendarDaysGrid);
-
+$eventDays = $("#calendar-view time[data-event-count]");
+$eventDays.click(function(event) {
+    event.preventDefault();
+    $(this).stop( true, true ).attr('class', 'animate-modal');
+});
 
 function createCalendar(date, $headerDOM, $calendarGridDOM) {
+    var $eventDays;
 //remove existing cal grid if there is one.
     $calendarGridDOM.empty();
 
 //append elements
     $headerDOM.text(getCurrentMonth(date).toUpperCase() + ' ' + date.getFullYear());
     $calendarGridDOM.append(getCalendarGrid(date, today));
-
 
 //returns the a string of the month based on the parameter's date object
     function getCurrentMonth(date) {
