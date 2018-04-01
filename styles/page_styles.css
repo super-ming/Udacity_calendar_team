@@ -444,7 +444,7 @@ a:link {
   text-align: center;
   font-family: 'Josefin Slab';
   font-size: 200%;
-  }
+}
 
 .roster > .box {
   display: flex;
@@ -463,14 +463,8 @@ a:link {
   grid-area: box3;
 }
 
-#box1 > div {
-  margin: .5em;
-}
-
-#box2 > div {
-  margin: .5em;
-}
-
+#box1 > div,
+#box2 > div,
 #box3 > div {
   margin: .5em;
 }
