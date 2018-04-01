@@ -388,3 +388,107 @@ h4{
     margin: .5em auto;
 }
 
+/*Styles for About Page*/
+
+.container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 2fr 2fr 5fr;
+  grid-template-areas:  "  us    us  "
+                        "team contact"
+                        "team    .   ";
+  margin: 5em 8em 5em;
+}
+
+.about-us {
+  background-color: #d3d3d3;
+  grid-area: us;
+  margin: 0 0 5em 0;
+  padding: .75em 2em 2em 2em;
+}
+
+.about-team {
+  grid-area: team;
+}
+
+.about-contact {
+  grid-area: contact;
+}
+
+a:link {
+  text-decoration: none;}
+
+
+.about-us > h1 {
+  padding-bottom: .2em;
+  font-family: 'Josefin Slab';
+  font-size: 300%;
+  letter-spacing: .16em;
+  text-align: center;
+  word-spacing: .21em;
+}
+
+.roster {
+  align-items: center;
+  display: grid;
+  grid-gap: .5em;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:  "box1"
+                        "box2"
+                        "box3";
+  justify-items: center;
+}
+
+.about-team > h2 {
+  text-align: center;
+  font-family: 'Josefin Slab';
+  font-size: 200%;
+  }
+
+.roster > .box {
+  display: flex;
+  flex-wrap: wrap;   
+}
+
+#box1 {
+  grid-area: box1;
+}
+
+#box2 {
+  grid-area: box2;
+}
+
+#box3 {
+  grid-area: box3;
+}
+
+#box1 > div {
+  margin: .5em;
+}
+
+#box2 > div {
+  margin: .5em;
+}
+
+#box3 > div {
+  margin: .5em;
+}
+
+.about-contact {
+  background-color: #c0c0c0;
+  padding: 1em;}
+
+.about-contact > h2 {
+  text-align: center;
+  font-family: 'Josefin Slab';
+  font-size: 200%;}
+
+.roster > .box,
+.about-us,
+.about-contact > #contact-container {
+  font-family: 'Arvo';
+  font-size: 110%;
+}
+
+
