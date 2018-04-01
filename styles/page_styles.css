@@ -417,8 +417,8 @@ h4{
 }
 
 a:link {
-  text-decoration: none;}
-
+  text-decoration: none;
+}
 
 .about-us > h1 {
   padding-bottom: .2em;
@@ -490,5 +490,3 @@ a:link {
   font-family: 'Arvo';
   font-size: 110%;
 }
-
-
