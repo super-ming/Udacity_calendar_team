@@ -310,6 +310,11 @@ input:checked + .slider:after
     cursor: pointer;
 }
 
+#calendar-view time[data-event-count]:hover {
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
 #calendar-view time.animate-modal {
     transform: scale(5);
 }

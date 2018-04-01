@@ -15,6 +15,7 @@ createCalendar(date, $monthHeader, $calendarDaysGrid);
 $navBack.click(function() {
     var backDate;
 
+    date.setDate(15); //set to the 15th to avoid issue from diff month length
     date.setMonth(date.getMonth()-1);
     backDate = date;
     createCalendar(backDate, $monthHeader, $calendarDaysGrid);
@@ -23,11 +24,12 @@ $navBack.click(function() {
 //add listener for forward navigation button
 //will change calendar to next month
 $navForward.click(function() {
-    var backDate;
+    var forwardDate;
 
+    date.setDate(15); //set to the 15th to avoid issue from diff month length
     date.setMonth(date.getMonth()+1);
-    backDate = date;
-    createCalendar(backDate, $monthHeader, $calendarDaysGrid);
+    forwardDate = date;
+    createCalendar(forwardDate, $monthHeader, $calendarDaysGrid);
 });
 
 $eventDays = $("#calendar-view time[data-event-count]");
