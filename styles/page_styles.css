@@ -130,6 +130,7 @@ color: #2A3840;
     }
     .details-aside{
         width: 40%;
+        min-height: 100vh;
     }
 } 
 
