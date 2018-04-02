@@ -104,37 +104,54 @@ color: #fff;
 color: #2A3840;
 }
 
-/*Event title, Description*/
+/*Event details*/
+.details-wrapper{
+    display: flex;
+}
+
+/* Layout for smaller devices (Tablets/phones)*/
+@media only screen and (max-width: 1024px) {
+    body {
+        width: 100%;
+        word-wrap: break-word;
+    }
+    .details-wrapper{
+        flex-direction: column;
+    }
+    .details-aside{
+        min-height: 50vh;
+    }
+} 
+
+/* Layout for larger devices (Laptops/desktops) */
+@media only screen and (min-width: 1025px) {
+    .details-main{
+        width: 60%;
+    }
+    .details-aside{
+        width: 40%;
+    }
+} 
+
 .details-main{
-    float: left;
-    width: 65%;
     height: auto;
     margin: 0 1%;
     padding: 0 2%;
-
     overflow-wrap : break-word;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: white;
 }
-
     .event-headline{
         height: 14%;
-        border: solid #f7f7f7 1px;
+        margin: 1em;
     }
     .event-description p{
         margin-top: 1em;
     }
-    #event-image {
-        height: 100%;
-        width: 100%;
-    }
 
-/*Date, Location, Contacts
+/*Map*/
 .details-aside{
-    float: left;
-    height: 500px;
-    width: 23%;
     position: relative;
     margin: 0 1%;
     padding: 0 2%;
@@ -147,12 +164,7 @@ color: #2A3840;
     .map {
         position: relative;
         margin-top: 1em;
-        padding-top: 30px;
-        padding-bottom: 55%;
-        height: 0;
-        overflow: hidden;
         }
-
         .map iframe,
         .map object,
         .map embed {
@@ -162,7 +174,7 @@ color: #2A3840;
         width: 100%;
         height: 100%;
         }
-    */
+    
 footer{
     clear: both;
     background-color: #f7f7f7;
