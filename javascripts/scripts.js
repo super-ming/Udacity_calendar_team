@@ -9,7 +9,7 @@ $toggler.click(function(){
 });
 
 function toggleView(){
-    let calView = $('#calendarView');
+    let calView = $('#calendar-view');
     let listView = $('#listView');
     if (calView.css("display") === "none"){
         calView.attr("style", "display:inline-block");
