@@ -113,6 +113,10 @@ aside{
     .event-description p{
         margin-top: 1em;
     }
+    #event-image {
+        height: 100%;
+        width: 100%;
+    }
 /*Date, Location, Contacts
 .details-aside{
     float: left;
