@@ -305,18 +305,9 @@ input:checked + .slider:after
     overflow: hidden;
     transition: transform .2s;
 }
-#calendar-view time[data-event-count]:hover {
+#calendar-view .toggle-hover time[data-event-count]:hover {
     transform: scale(1.08);
     cursor: pointer;
-}
-
-#calendar-view time[data-event-count]:hover {
-    transform: scale(1.08);
-    cursor: pointer;
-}
-
-#calendar-view time.animate-modal {
-    transform: scale(5);
 }
 
 #calendar-view time:not([datetime]) {
@@ -332,7 +323,7 @@ input:checked + .slider:after
     margin-left: 0;
 }
 
-.date-num {
+#calendar-view time .date-num {
     background-color: rgba(27,178,78,.7);
     color: rgb(253,253,253);
     padding-left: 5px;
@@ -386,5 +377,68 @@ h4{
     display: block;
     width: 85%;
     margin: .5em auto;
+}
+
+.event-time {
+    display: none;
+}
+
+.event-name-long {
+    display: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    position: relative;
+    margin: 15% auto;
+    overflow: hidden;
+    border-radius: 2.5%;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 25vw;
+    min-height: 250px;
+}
+
+.modal-content .date-num {
+    background-color: rgba(27,178,78,.7);
+    color: rgb(253,253,253);
+    padding: 10px 0px 10px 15px;
+    font-size: 2em;
+}
+
+.modal .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 35px;
+    color: white;
+    margin: 6px 10px;
+}
+.modal .close:hover {
+    color: #aaa;
+    cursor: pointer;
+}
+
+.modal-content .event-name-short {
+    display: none;
+}
+
+.modal-content .event-time {
+    display: block;
+}
+
+.modal-content .event-name-long {
+    display: block;
 }
 
