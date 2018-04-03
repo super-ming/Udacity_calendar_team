@@ -107,41 +107,29 @@ color: #2A3840;
 /*Event details*/
 .details-wrapper{
     display: flex;
+    flex-direction: column;
 }
-
-/* Layout for smaller devices (Tablets/phones)*/
-@media only screen and (max-width: 1024px) {
-    body {
-        width: 100%;
-        word-wrap: break-word;
-    }
-    .details-wrapper{
-        flex-direction: column;
-    }
     .details-aside{
         min-height: 50vh;
+        width: 100%;
+        position: relative;
     }
-} 
-
-/* Layout for larger devices (Laptops/desktops) */
-@media only screen and (min-width: 1025px) {
-    .details-main{
-        width: 60%;
+    #map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
-    .details-aside{
-        width: 40%;
-        min-height: 100vh;
-    }
-} 
 
 .details-main{
     height: auto;
     margin: 0 1%;
     padding: 0 2%;
+    word-wrap: break-word;
     overflow-wrap : break-word;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: white;
 }
     .event-headline{
         height: 14%;
@@ -152,26 +140,7 @@ color: #2A3840;
     }
 
 /*Map*/
-.details-aside{
-    position: relative;
-    margin: 0 1%;
-    padding: 0 2%;
-    background-color: white;
-}
-    .details-aside div{
-        margin-bottom: 2em;
-    }
-    Google Map
-    .map {
-        position: relative;
-        margin-top: 1em;
-        }
-        .map iframe,
-        .map object,
-        .map embed {
-        position: absolute;
-        top: 0;
-        left: 0;
+    #map {
         width: 100%;
         height: 100%;
         }
