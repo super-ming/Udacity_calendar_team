@@ -1,7 +1,7 @@
 /* global styles */
 @import url('https://fonts.googleapis.com/css?family=Mina');
 
-body{
+body {
     overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
     color: #2A3E49;
@@ -11,22 +11,25 @@ body{
     line-height: 1.5em;
     background-color: #fafafa;
 }
-    h1{
-        font-size: 150%;
-        font-weight: bold;
-        color:#000000FF;
-    }
-    h2{
-        font-size: inherit;
-        font-weight: bold;
-    }
-.wrapper{
+
+h1 {
+    font-size: 150%;
+    font-weight: bold;
+    color:#000000FF;
+}
+
+h2 {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+.wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-areas:
-        'header header'
-        'aside main'
-        'footer footer';
+                        'header header'
+                        'aside   main '
+                        'footer footer';
     width: 100%;
     margin: 0;
     padding: 0;
@@ -34,19 +37,32 @@ body{
     overflow-x: hidden;
     overflow-y: hidden;
 }
-.header-wrapper{
+
+.header-wrapper {
     margin-left: 10%;
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
 }
-header { grid-area: header; }
-main { grid-area: main; }
-aside { grid-area: aside; }
-footer { grid-area: footer; }
 
-aside{
+header { 
+    grid-area: header; 
+}
+
+main { 
+    grid-area: main;
+}
+
+aside { 
+    grid-area: aside;
+}
+
+footer { 
+    grid-area: footer;
+}
+
+aside {
     padding-left: 10px;
     background-color:#FFFFFFFF;
 }
@@ -54,18 +70,21 @@ aside{
 main {
     padding: 1% 3%;
 }
-.global-header{
+
+.global-header {
     background: linear-gradient(92.78deg, #8FBEDB 1.88%, rgba(222, 236, 244, 0.29337) 75.05%, rgba(255, 255, 255, 0) 98.6%), #1BB24E;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 50px;
     padding: 15px;
 }
-.title-and-navi{
+
+.title-and-navi {
     display: flex;
     width: 100%;
 }
-#website-title{
+
+#website-title {
     font-family: 'Mina', sans-serif;
     font-size: 2.5em;
     font-weight: bold;
@@ -73,91 +92,100 @@ main {
     line-height: 50px;
     width: 70%;
 }
-#website-title a{
+
+#website-title a {
     text-decoration: none;
     color: #2A3840;
 }
-.global-nav{
-background-color: transparent;
-color: #2a3840;
-font-size: 110%;
-width: 20%;
+
+.global-nav {
+    background-color: transparent;
+    color: #2a3840;
+    font-size: 110%;
+    width: 20%;
 }
-#navigation{
+
+#navigation {
     list-style-type: none;
     margin: 0;
     padding-right: 20px;
     position: absolute;
     right: 0;
 }
-#navigation li{
-float: left;
-padding: 0 5px;
-}
-#navigation li a {
-text-decoration: none;
-}
-#navigation li a:hover {
-color: #fff;
-}
-#navigation a{
-color: #2A3840;
+
+#navigation li {
+    float: left;
+    padding: 0 5px;
 }
 
-/*Event title, Description*/
-.details-main{
-    float: left;
-    width: 65%;
+#navigation li a {
+    text-decoration: none;
+}
+
+#navigation li a:hover {
+    color: #fff;
+}
+
+#navigation a {
+    color: #2A3840;
+}
+
+/*Event details*/
+.details-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout for smaller devices (Tablets/phones)*/
+@media only screen and (max-width: 1024px) {
+body {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.details-wrapper {
+    flex-direction: column;
+}
+
+.details-aside {
+    min-height: 50vh;
+    width: 100%;
+    position: relative;
+}
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.details-main {
     height: auto;
     margin: 0 1%;
     padding: 0 2%;
-
+    word-wrap: break-word;
     overflow-wrap : break-word;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: white;
 }
-.event-headline{
+
+.event-headline {
     height: 14%;
-    border: solid #f7f7f7 1px;
+    margin: 1em;
 }
-.event-description p{
+
+.event-description p {
     margin-top: 1em;
 }
-/*Date, Location, Contacts
-.details-aside{
-    float: left;
-    height: 500px;
-    width: 23%;
-    position: relative;
-    margin: 0 1%;
-    padding: 0 2%;
-    background-color: white;
-}
-    .details-aside div{
-        margin-bottom: 2em;
-    }
-    Google Map
-    .map {
-        position: relative;
-        margin-top: 1em;
-        padding-top: 30px;
-        padding-bottom: 55%;
-        height: 0;
-        overflow: hidden;
-        }
 
-        .map iframe,
-        .map object,
-        .map embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        }
-    */
-footer{
+/*Map*/
+#map {
+    width: 100%;
+    height: 100%;
+    }
+    
+footer {
     clear: both;
     background-color: #f7f7f7;
     width: 100%;
@@ -168,12 +196,13 @@ footer{
     bottom: 0;
 }
 
-.copywrite{
-color: #919699;
-font-size: small;
-font-weight: normal;
+.copywrite {
+    color: #919699;
+    font-size: small;
+    font-weight: normal;
 }
-    /* landing page styles */
+
+/* landing page styles */
 
 /* The switch - the box around the slider */
 .switch {
@@ -191,7 +220,7 @@ font-weight: normal;
 }
 
 /* The slider */
-.slider{
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -201,6 +230,7 @@ font-weight: normal;
     background-color: #ccc;
     transition: .4s;
 }
+
 .slider:before {
     position: absolute;
     content: "";
@@ -224,8 +254,7 @@ input:checked + .slider:before {
   transform: translateX(36px);
 }
 
-.slider:after
-{
+.slider:after {
  content:'List';
  color: black;
  display: block;
@@ -237,9 +266,8 @@ input:checked + .slider:before {
  font-family: Verdana, sans-serif;
 }
 
-input:checked + .slider:after
-{
-  content:'Calendar';
+input:checked + .slider:after {
+    content:'Calendar';
 }
 
 /* Rounded sliders */
@@ -251,12 +279,11 @@ input:checked + .slider:after
   border-radius: 50%;
 }
 
-.cal-eventList{
+.cal-eventList {
     height: auto;
     width: 80%;
     background-color:#FFFFFFFF;
     display: none;
-
 }
 
 #calendar-view {
@@ -291,6 +318,7 @@ input:checked + .slider:after
     display: flex;
     flex-flow: wrap;
 }
+
 .cal-row-header span, #calendar-view time {
     width: 13.88%; /* 100percent / 7.25 */
     margin: .23148%; /* .25percent / 12 */
@@ -305,6 +333,7 @@ input:checked + .slider:after
     overflow: hidden;
     transition: transform .2s;
 }
+
 #calendar-view .toggle-hover time[data-event-count]:hover {
     transform: scale(1.08);
     cursor: pointer;
@@ -315,11 +344,13 @@ input:checked + .slider:after
     box-shadow: none;
 }
 
-#calendar-view time:nth-of-type(7n), .cal-row-header span:last-child {
+#calendar-view time:nth-of-type(7n), 
+.cal-row-header span:last-child {
     margin-right: 0;
 }
 
-#calendar-view time:nth-of-type(7n +1), .cal-row-header span:first-child {
+#calendar-view time:nth-of-type(7n +1), 
+.cal-row-header span:first-child {
     margin-left: 0;
 }
 
@@ -332,16 +363,17 @@ input:checked + .slider:after
 
 
 /* list view */
-.event-list-view-hidden{
+.event-list-view-hidden {
     visibility: hidden;
 }
-.event-list-view{
+
+.event-list-view {
     width: 90%;
     min-height: auto;
     overflow: inherit;
 }
 
-h4{
+h4 {
     color: #353535FF;
 }
 
@@ -361,6 +393,7 @@ h4{
 .event-details {
     margin: auto 5px;
 }
+
 .event-details ul {
     padding: 0;
 }
@@ -442,3 +475,144 @@ h4{
     display: block;
 }
 
+/*About Page*/
+#about-wrapper {
+    display: grid;
+    grid-template-areas:
+                        '  header       header '
+                        'about-main  about-main'
+                        '  footer       footer ';
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#about-main {
+  grid-area: about-main;
+}
+
+#about-container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 2fr 2fr 5fr;
+  grid-template-areas:  "  us    us  "
+                        "team contact"
+                        "team    .   ";
+  margin: 5em 8em 5em;
+}
+
+#about-us {
+  background-color: #d3d3d3;
+  grid-area: us;
+  margin: 0 0 2em 0;
+  padding: .75em 2em 1.25em 2em;
+}
+
+#about-team {
+  background-color: #c0c0c0;
+  grid-area: team;
+}
+
+#about-contact {
+  grid-area: contact;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+#about-us > h1 {
+  font-family: 'Josefin Slab';
+  font-size: 300%;
+  line-height: 130%;
+  letter-spacing: .22em;
+  text-align: center;
+  word-spacing: .21em;
+}
+
+#roster {
+  display: grid;
+  grid-gap: .5em;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:  "row1"
+                        "row2"
+                        "row3";
+}
+
+
+.roster-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.roster-row::before {
+  content: '';
+}
+
+.roster-row::after {
+  content: '';
+}
+
+#roster-row-1 {
+  grid-area: row1;
+}
+
+#roster-row-2 {
+  grid-area: row2;
+}
+
+#roster-row-3 {
+  grid-area: row3;
+}
+
+#roster-row-1 > div,
+#roster-row-2 > div,
+#roster-row-3 > div {
+  margin: .5em;
+}
+
+.profile {
+  text-align: center;
+}
+
+.bio {
+  display: inline-block;
+  text-align: left;
+}
+
+.name {
+  font-size: 120%;
+}
+
+#profile-image {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 150px;
+}
+
+#about-contact {
+  background-color: #cfcfcf;
+  padding: 1em;
+}
+
+
+#about-team > h2,
+#about-contact > h2 {
+  text-align: center;
+  font-family: 'Josefin Slab';
+  font-size: 200%;
+}
+
+#roster > .roster-row,
+#about-us,
+.about-contact > #contact-container {
+  font-family: 'Arvo';
+  font-size: 110%;
+}

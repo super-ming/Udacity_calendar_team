@@ -9,62 +9,40 @@
     <title>Event Details</title>
 </head>
 <body>
-    <div class="wrapper">
-        <header class="global-header">
-            <div class="header-wrapper">
-                <div id="website-title">
-                    What is the next tech event in Seattle?
-                </div>
-                <nav role="navigation" class="global-nav">
-                    <ul id="navigation">
-                        <li><a href="" target = "_self">Home</a></li>
-                        <li><a href="" target = "_self">About</a></li>
-                        <li><a href="" target = "_self">Support</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main class="details-main">
-            <!--<figure class="event-photo">
-
-            </figure>-->
             <div class="event-headline">
-                <h1><!--Event Headline-->Washington Project Meeting #1</h1>
+                <!--Date-->April 4 2018
+                <!--Time-->6:00 PM – ?:00 PM
+                <h1>Washington Project Meeting #6 or so</h1>
+                <p id="event_address">1521 10th Avenue, Seattle</p>
+            </div>
+            <div class="listing-hero listing-hero--bkg clrfix fx--delay-6 fx--fade-in">
+                    <picture content="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=1000&amp;rect=0%2C0%2C1280%2C640&amp;s=ac55e44afc9555717192ec860b27d1e1">
+                        <source srcset="
+                            https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=480&amp;rect=0%2C0%2C1280%2C640&amp;s=dc928f9413e4e487ab93b3ae0668ab24 480w,
+                            https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=600&amp;rect=0%2C0%2C1280%2C640&amp;s=7d22db2571d31e19ec352a22c2bdcd7b 600w,
+                            https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=800&amp;rect=0%2C0%2C1280%2C640&amp;s=77a6190039932b536276b6ffa34d0a7b 800w
+                            " sizes="100vw">
+                        <img class="listing-hero-image js-picturefill-img listing-image--main" data-automation="listing-hero-image" alt="">
+                    </picture>
+                </div>
+    <div class="details-wrapper">
+        <main class="details_main">
+            <div class="event-link">
+                <!--Link to the event page--><a href="https://www.facebook.com/events/2022931674638015/">Grow w/ Google x Udacity - Washington State</a>
             </div>
             <article class="event-description">
                 <p>Lets meet and go over the Washington Group Project details. <br>For those of you who cannot attend at this location, I will have video feed available on Google Hangouts so you can join the conversation. Link here:
                 <a href="https://hangouts.google.com/group/EcKwOcNSPDOuI2T22">https://hangouts.google.com/group/EcKwOcNSPDOuI2T22</a></p>
-
-                <p>Also, I made a Google Drive publicly available so we can all add and update content in a central location (we will use GitHub for the actual code and project assets). In this drive you will find an early version of an agenda for our first meeting. <br>Feel free to add some items or notes.
-                Link to Google Drive: <a href="https://drive.google.com/drive/folders/1cq_knSmqbPCCkO39bBVs04ULyGFpYITh?usp=sharing">https://drive.google.com/drive/folders/1cq_knSmqbPCCkO39bBVs04ULyGFpYITh?usp=sharing</a></p>
-
-                <p>I am hoping this project can be as inclusive as possible and that everyone can have a chance to work on the project no matter their time constraints.</p>
+                <p>Also, I made a Google Drive publicly available so we can all add and update content in a central location (we will use GitHub for the actual code and project assets). <br>
+                Link to Google Drive: <a href="httpskO39bBVs04ULyGFpYITh?usp=sharing">https://drive.google.com/drive/folders/1cq_knSmqbPCCkO39bBVs04ULyGFpYITh?usp=sharing</a></p>
             </article>
         </main>
         <aside class="details-aside">
-            <div class="event-date">
-                <h2>When:</h2>
-                <!--Date-->March 4 2018
-                <!--Time-->2:00 PM – 5:00 PM
-            </div>
-            <div class="event-location">
-                <h2>Where:</h2>
-                <!--Address-->500 Westlake Ave N, Seattle, WA 98109-4303, United States
-                <div class="map">
-                    <!--Map-->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.1395948886043!2d-122.34028318436891!3d47.623417679185785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901539d13c246b%3A0xbe84c5d3de10b089!2s500+Westlake+Ave+N%2C+Seattle%2C+WA+98109!5e0!3m2!1sja!2sus!4v1520748670542" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="event-contacts">
-                <h2>Contact(s):</h2>
-                <!--Organiser--><a href="https://www.facebook.com/events/2022931674638015/">Grow w/ Google x Udacity - Washington State</a>
-            </div>
+            <div id="map"></div>
         </aside>
-        <footer>
-            <div class="copywrite">
-                &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Udacity GwG Washington State Team
-            </div>
-        </footer>
-    </div> <!--End wrapper-->
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_XL2pAxYu7YeCW943eSeQOQqU0LsIIQ&callback=initMap" async defer></script>
+<script src="./javascripts/details.js"></script>
 </body>
 </html>
