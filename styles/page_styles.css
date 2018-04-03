@@ -27,9 +27,9 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-areas:
-    'header header'
-    'aside main'
-    'footer footer';
+                        'header header'
+                        'aside   main '
+                        'footer footer';
     width: 100%;
     margin: 0;
     padding: 0;
