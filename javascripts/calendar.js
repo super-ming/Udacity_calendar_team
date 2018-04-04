@@ -72,7 +72,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
         var lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() +1, 0 );
         var firstWeekDay = firstDayOfMonth.getDay() +1;
         var calendarDate = firstDayOfMonth;
-        var currMonthEventData = JSON.parse(sessionStorage.getItem("briteEvents"))[date.getMonth()];
+        var currMonthEventData = JSON.parse(sessionStorage.getItem("briteEventsByMonth"))[date.getMonth()];
         var currDayEventData;
 
         for(var dayBox=1; dayBox <= 35; dayBox++) {
@@ -146,9 +146,14 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
-                                        .text(event.name.text.substring(0,40).concat(event.name.text.length > 40? ('...'):'')),
+                                        .append('<a href="./event_details.html#' + event.id + '">' +
+                                            event.name.text.substring(0,40).concat(
+                                                event.name.text.length > 40? ('...'):'')
+                                            + '</a>'
+                                        ),
                                     $('<div class="event-time">').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})),
-                                    $('<div class="event-name-long">').text(event.name.text)
+                                    $('<div class="event-name-long">')
+                                        .append('<a href="./event_details.html#' + event.id + '">' + event.name.text + '</a>')
                                 );
             }));
 
