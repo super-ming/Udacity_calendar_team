@@ -46,19 +46,19 @@ h2 {
     padding: 0;
 }
 
-header { 
-    grid-area: header; 
+header {
+    grid-area: header;
 }
 
-main { 
+main {
     grid-area: main;
 }
 
-aside { 
+aside {
     grid-area: aside;
 }
 
-footer { 
+footer {
     grid-area: footer;
 }
 
@@ -173,7 +173,7 @@ main {
     width: 100%;
     height: 100%;
     }
-    
+
 /* Footer */
 footer {
     clear: both;
@@ -334,12 +334,12 @@ input:checked + .slider:after {
     box-shadow: none;
 }
 
-#calendar-view time:nth-of-type(7n), 
+#calendar-view time:nth-of-type(7n),
 .cal-row-header span:last-child {
     margin-right: 0;
 }
 
-#calendar-view time:nth-of-type(7n +1), 
+#calendar-view time:nth-of-type(7n +1),
 .cal-row-header span:first-child {
     margin-left: 0;
 }
@@ -546,6 +546,7 @@ a:link {
 
 .roster-row::after {
   content: '';
+>>>>>>> master
 }
 
 #roster-row-1 {
@@ -605,4 +606,120 @@ a:link {
 .about-contact > #contact-container {
   font-family: 'Arvo';
   font-size: 110%;
+}
+
+/* Sign up page */
+
+/*using same wrapper for sign up, login, submission page*/
+.submit-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            'header'
+            'main'
+            'footer';
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.submit-main {
+    padding: 26px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-family: 'Mina', sans-serif;
+    color: #2A3840;
+}
+
+.submit-container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px;
+}
+
+.submit-container > input, .event_time > input {
+    flex: 1 1 40px;
+    text-indent: 10px;
+    font-family: 'Mina', sans-serif;
+}
+
+
+input[type=text], input[type=password], .event_time > input {
+  width: 40%;
+  height: 40px;
+  padding:0px;
+  margin: 2px 0 20px 0;
+  border: none;
+  background: #f1f1f1;
+  min-width: 300px;
+
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.signupbtn {
+  background-color: #1BB24E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+}
+
+/* Login page*/
+.loginbtn {
+    background-color: #1BB24E;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/*submission page*/
+
+input[name="event-details"]{
+    width: 100%;
+    min-height: 300px;
+
+}
+
+.addeventbtn {
+    background-color: #8FBEDB;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+#timezone {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 15px;
+    height: 40px;
+    background-color: #fafafa;
+}
+
+input[name="event-time"], #timezone {
+    flex-direction: row;
+}
+
+textarea {
+    width: 90%;
+    min-height: 400px;
+    background: #f1f1f1;
+    font-family: 'Mina', sans-serif;
+    padding: 10px;
+    margin-bottom: 15px;
 }
