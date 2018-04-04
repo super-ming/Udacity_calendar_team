@@ -32,10 +32,20 @@ $navForward.click(function() {
     createCalendar(forwardDate, $monthHeader, $calendarDaysGrid);
 });
 
-$eventDays = $("#calendar-view time[data-event-count]");
-$eventDays.click(function(event) {
-    event.preventDefault();
-    $(this).stop( true, true ).attr('class', 'animate-modal');
+
+$('#calendar-view').on('click', "time[data-event-count]", function() {
+    $('.cal-days').removeClass('toggle-hover');
+    $('.modal').css('display', 'block');
+    $('.modal-content').append('<span class="close">&times;</span>');
+    $('.modal-content').append($(this).children().clone());
+});
+
+$('#calendar-view').click(function(event) {
+    if (event.target.className === 'modal' || event.target.className === 'close') {
+        $('.modal').css('display', 'none');
+        $('.modal-content').empty();
+        $('.cal-days').addClass('toggle-hover');
+    }
 });
 
 function createCalendar(date, $headerDOM, $calendarGridDOM) {
@@ -64,18 +74,13 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
         var calendarDate = firstDayOfMonth;
         var currMonthEventData = JSON.parse(sessionStorage.getItem("briteEvents"))[date.getMonth()];
         var currDayEventData;
-        //console.log(currMonthEventData, ' MONTH: ', date.getMonth());
-        //console.log(new Date(currMonthEventData[0].start.local).getDay());
-        //console.log(currMonthEventData.map(function(event){return event.start.local.substring(8,10)}));
 
         for(var dayBox=1; dayBox <= 35; dayBox++) {
             if (dayBox >= firstWeekDay &&
                 dayBox-firstWeekDay <
                 lastDayOfMonth.getDate())
             {
-
                 currDayEventData = currMonthEventData.filter(function(event) {
-                    //console.log(calendarDate.getDate(),': ', Number(event.start.local.substring(8,10)) === calendarDate.getDate() );
                     return Number(event.start.local.substring(8,10)) === calendarDate.getDate();
                 });
 
@@ -129,11 +134,25 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
         }
 
         function createEventDetailsElement(currDayEventData) {
-            var names = $('<ul>').append(currDayEventData.map(function(event){
-                return $('<li>').text(event.name.text.substring(0,40).concat(event.name.text.length > 40? ('...'):''));
+            //get the name of each event (max 40 chars), append them to an li
+            //these will be displayed in calendar view
+            currDayEventData.sort((function (a, b) {
+                var aDate = new Date(a.start.local);
+                var bDate = new Date(b.start.local);
+                return aDate - bDate;
+            }));
+            var eventDetails = $('<ul>').append(currDayEventData.map(function(event){
+                var time = new Date(event.start.local);
+                return $('<li>').attr('data-event-id', event.id)
+                                .append(
+                                    $('<div class="event-name-short">')
+                                        .text(event.name.text.substring(0,40).concat(event.name.text.length > 40? ('...'):'')),
+                                    $('<div class="event-time">').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})),
+                                    $('<div class="event-name-long">').text(event.name.text)
+                                );
             }));
 
-            return $('<div class="event-details">').append(names);
+            return $('<div class="event-details">').append(eventDetails);
         }
     };
 }
