@@ -1,6 +1,10 @@
 
 
 var neighborhoodFilter = $(".filter-title");
+neighborhoodFilter.click(function() {
+    $(this).next().toggle();
+});
+
 let $toggler = $("#toggleButton");
 
 //Add event listener for click to toggle either calendar or list view
@@ -20,6 +24,16 @@ function toggleView(){
     }
 };
 
+//if screen is smaller than 992px wide then remove style attr
+//added by the toggle so that only the list view displayed
+//in all non-desktop views
+$( window ).resize(function() {
+    if($(window).width() < 992) {
+        $('#calendar-view').removeAttr('style');
+        $('#listView').removeAttr('style');
+    }
+});
+
 //Vanilla javascript version
 /*document.getElementById('toggleButton').addEventListener('click', function () {
     toggleView();
@@ -37,9 +51,6 @@ function toggleView(){
     }
 };*/
 
-neighborhoodFilter.click(function() {
-    $(this).next().toggle();
-});
 
 // Connect to the Eventful API
 $(document).ready(function() {
