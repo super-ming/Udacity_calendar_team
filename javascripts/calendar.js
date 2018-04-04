@@ -6,9 +6,9 @@ var $navBack = $('.cal-nav-back');
 var $navForward = $('.cal-nav-forward');
 var $eventDays;
 
+
 //add calendar based on today's date.
 //the today variable will change based on use of nav buttons
-createCalendar(date, $monthHeader, $calendarDaysGrid);
 
 //add listener for back navigation button
 //will change calendar to prev month
@@ -146,7 +146,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
-                                        .append('<a href="./event_details.html#' + event.id + '">' +
+                                        .append('<a href="./event_details.html#event-id=' + event.id + '">' +
                                             event.name.text.substring(0,40).concat(
                                                 event.name.text.length > 40? ('...'):'')
                                             + '</a>'

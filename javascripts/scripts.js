@@ -65,6 +65,7 @@ $(document).ready(function() {
             //store those event in the local storage
             sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
             sessionStorage.setItem('briteEvents', JSON.stringify(res.events));
+            createCalendar(date, $monthHeader, $calendarDaysGrid);
 //console.log(JSON.parse(sessionStorage.getItem("briteEvents")));
             for(var i=0;i<res.events.length;i++) {
                 var event = res.events[i];
