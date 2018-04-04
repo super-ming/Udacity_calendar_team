@@ -135,18 +135,9 @@ main {
     display: flex;
     flex-direction: column;
 }
-
-/* Layout for smaller devices (Tablets/phones)*/
-@media only screen and (max-width: 1024px) {
-    body {
-        width: 100%;
-        word-wrap: break-word;
+    #event_address {
+        margin-bottom: 0;
     }
-
-    .details-wrapper {
-        flex-direction: column;
-    }
-
     .details-aside {
         min-height: 50vh;
         width: 100%;
