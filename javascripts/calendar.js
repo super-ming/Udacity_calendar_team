@@ -136,6 +136,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
         function createEventDetailsElement(currDayEventData) {
             //get the name of each event (max 40 chars), append them to an li
             //these will be displayed in calendar view
+
             currDayEventData.sort((function (a, b) {
                 var aDate = new Date(a.start.local);
                 var bDate = new Date(b.start.local);
@@ -146,14 +147,14 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
-                                        .append('<a href="./event_details.html#event-id=' + event.id + '">' +
+                                        .append('<a href="' + currDayEventData.map(function(event){return event.url}) + '">' +
                                             event.name.text.substring(0,40).concat(
                                                 event.name.text.length > 40? ('...'):'')
                                             + '</a>'
                                         ),
                                     $('<div class="event-time">').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})),
                                     $('<div class="event-name-long">')
-                                        .append('<a href="./event_details.html#' + event.id + '">' + event.name.text + '</a>')
+                                        .append('<a href="' + currDayEventData.map(function(event){return event.url}) + '">' + event.name.text + '</a>')
                                 );
             }));
 
