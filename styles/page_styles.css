@@ -419,7 +419,7 @@ h4 {
     line-height: 1.4em;
 }
 
-.event-details li::after {
+.event-details li:not(:last-child)::after {
     content: "";
     border-bottom: solid 1px lightgray;;
     display: block;
