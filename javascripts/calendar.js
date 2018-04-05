@@ -33,7 +33,7 @@ $navForward.click(function() {
 });
 
 
-$('#calendar-view').on('click', "time[data-event-count]", function() {
+$('#calendar-view').on('click', "time[data-event-count]", function(event) {
     $('.cal-days').removeClass('toggle-hover');
     $('.modal').css('display', 'block');
     $('.modal-content').append('<span class="close">&times;</span>');
@@ -147,11 +147,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
-                                        .append('<a href="' + currDayEventData.map(function(event){return event.url}) + '">' +
-                                            event.name.text.substring(0,40).concat(
-                                                event.name.text.length > 40? ('...'):'')
-                                            + '</a>'
-                                        ),
+                                        .append(event.name.text.substring(0,40).concat()),
                                     $('<div class="event-time">').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})),
                                     $('<div class="event-name-long">')
                                         .append('<a href="' + currDayEventData.map(function(event){return event.url}) + '">' + event.name.text + '</a>')
