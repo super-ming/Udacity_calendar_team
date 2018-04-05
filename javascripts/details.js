@@ -1,5 +1,17 @@
 var gMap = null;
 var gMarkerCenter = null;
+
+//gets array of events from session storage
+var storage = JSON.parse(sessionStorage.getItem("briteEvents"));
+
+//filters array for the event being passed by URL Location Hash
+var eventObj = storage.filter(function(event) {
+    return '#event-id=' + event.id === location.hash;
+});
+
+//Should we try to make an if statement to do a single API call
+//incase user has linked saved but hasn't gone to index.html
+//to generate sessionStorage data?
  
 function initMap() {
     //latlng setting
@@ -46,4 +58,8 @@ function drawMarkerCenterInit(pos) {
     });
     return markerCenter;
 }
+
+
+
+
 

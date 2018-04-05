@@ -63,7 +63,9 @@ $(document).ready(function() {
             var s = "<ul class='eventList'>";
             //create an array of event by month
             //store those event in the local storage
-            sessionStorage.setItem('briteEvents', JSON.stringify(briteEventByMonthObject(res.events)));
+            sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
+            sessionStorage.setItem('briteEvents', JSON.stringify(res.events));
+            createCalendar(date, $monthHeader, $calendarDaysGrid);
 
             for(var i=0;i<res.events.length;i++) {
                 var event = res.events[i];
@@ -96,6 +98,7 @@ function briteEventByMonthObject(events) {
     return byMonth;
 }
 
+
 // Load event's image
 // event.logo_id;
 // $(document).ready(function eventImage() {
@@ -107,8 +110,8 @@ function briteEventByMonthObject(events) {
 //         var eventImage = event.logo_id;
 
 //         $('#event-image').setAttribute('src',eventImage);
-//         $('#event-image').setAttribute('alt',event.name.text);    
-    
+//         $('#event-image').setAttribute('alt',event.name.text);
+
 //     if(res.events.length) {
 //             var s = "<ul class='eventList'>";
 //             //create an array of event by month
