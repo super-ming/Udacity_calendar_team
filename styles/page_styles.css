@@ -170,12 +170,18 @@ main {
     box-sizing: border-box;
 }
 
-    .material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon {
-        display: none;
-    }
-
+.material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon,
+.small-view-filter {
+    display: none;
+}
 
 @media only screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-areas: 'header header'
+                             'aside aside'
+                             'main main '
+                             'footer footer';
+    }
     .material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon {
         display: block;
         cursor: pointer;
@@ -221,17 +227,29 @@ main {
         font-size: 25px;
         line-height: 1.5em;
     }
-    #navigation ul li::after {
+    #navigation ul li::after,
+    #navigation ul li:last-child::after,
+    .filter-link::after  {
         content: '\203A';
         padding: 0 10px;
         font-size: 1.25em;
 
     }
-    #navigation ul li:last-child::after {
-        content: '\203A';
-        padding: 0 10px;
-        font-size: 1.25em;
+
+    .small-view-filter {
+        display: block;
+        text-align: right;
+        cursor: pointer;
     }
+
+    .filter-container {
+        display: none;
+    }
+
+    .toggle-display-small-view {
+        display: block;
+    }
+
 }
 
 

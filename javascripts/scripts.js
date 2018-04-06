@@ -68,6 +68,14 @@ $('.global-nav').click(function(event) {
     }
 });
 
+$('#filters').click(function(event) {
+    $target = $(event.target);
+
+    if($target.hasClass('filter-link')) {
+        $('.filter-container').toggleClass('toggle-display-small-view');
+    }
+});
+
 // Connect to the Eventful API
 $(document).ready(function() {
 

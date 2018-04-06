@@ -41,6 +41,7 @@
                 <input id="toggleButton" type="checkbox">
                 <span class="slider round"></span>
             </label>
+
             <section id= "calendar-view">
                 <div class="cal-nav">
                     <i class="material-icons cal-nav-back">navigate_before</i>
@@ -77,66 +78,70 @@
             </section>
         </main>
         <aside id="filters">
-            <h1>Event Filter</h1>
-            <form id="filters-type">
-                <h4>By Neighborhood</h4>
-                <!-- <h4 class="filter-title">By Neighborhood</h4> -->
-                <!-- <div class="filter"> -->
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-neighborhood-capitalhill" name="neighborhood" value="Capitol-Hill">
-                        <label for="filter-neighborhood-capitalhill">Capitol Hill</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-neighborhood-downtown" name="neighborhood" value="Downtown Seattle">
-                        <label for="filter-neighborhood-downtown">Downtown</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-neighborhood-belltown" name="neighborhood" value="Belltown">
-                        <label for="filter-neighborhood-belltown">Belltown</label>
-                    </div>
-                <!-- </div> -->
-                <h4>By Language</h4>
-                <!-- <h4 class="filter-title">By Language</h4> -->
-             <!--    <div class="filter"> -->
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-lang-javascript" name="language" value="Javascript">
-                        <label for="filter-lang-javascript">Javascript</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-lang-python" name="language" value="Python">
-                        <label for="filter-lang-python">Python</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-lang-css" name="language" value="CSS">
-                        <label for="filter-lang-css">CSS</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-lang-html" name="language" value="HTML">
-                        <label for="filter-lang-html">HTML</label>
-                    </div>
-                <!-- </div> -->
+            <!--only displays in small view so filters can toggle-->
+            <div class="small-view-filter"><span class="filter-link">filters</span></div>
+            <div class="filter-container">
+                <h1>Event Filter</h1>
+                <form id="filters-type">
+                    <h4>By Neighborhood</h4>
+                    <!-- <h4 class="filter-title">By Neighborhood</h4> -->
+                    <!-- <div class="filter"> -->
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-neighborhood-capitalhill" name="neighborhood" value="Capitol-Hill">
+                            <label for="filter-neighborhood-capitalhill">Capitol Hill</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-neighborhood-downtown" name="neighborhood" value="Downtown Seattle">
+                            <label for="filter-neighborhood-downtown">Downtown</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-neighborhood-belltown" name="neighborhood" value="Belltown">
+                            <label for="filter-neighborhood-belltown">Belltown</label>
+                        </div>
+                    <!-- </div> -->
+                    <h4>By Language</h4>
+                    <!-- <h4 class="filter-title">By Language</h4> -->
+                 <!--    <div class="filter"> -->
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-lang-javascript" name="language" value="Javascript">
+                            <label for="filter-lang-javascript">Javascript</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-lang-python" name="language" value="Python">
+                            <label for="filter-lang-python">Python</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-lang-css" name="language" value="CSS">
+                            <label for="filter-lang-css">CSS</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-lang-html" name="language" value="HTML">
+                            <label for="filter-lang-html">HTML</label>
+                        </div>
+                    <!-- </div> -->
 
-                <h4>By Tag</h4>
-                <!-- <h4 class="filter-title">By Tag</h4> -->
-               <!--  <div class="filter"> -->
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-tag-frontend" name="tag" value="Frontend Development">
-                        <label for="filter-tag-frontend">Frontend Development</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-tag-backend" name="tag" value="Backend Development">
-                        <label for="filter-tag-backend">Backend Development</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-tag-women" name="tag" value="Women In Tech">
-                        <label for="filter-tag-women">Women In Tech</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="filter-tag-new" name="tag" value="New In Tech">
-                        <label for="filter-tag-new">New In Tech</label>
-                    </div>
-                <!-- </div> -->
-            </form>
+                    <h4>By Tag</h4>
+                    <!-- <h4 class="filter-title">By Tag</h4> -->
+                   <!--  <div class="filter"> -->
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-tag-frontend" name="tag" value="Frontend Development">
+                            <label for="filter-tag-frontend">Frontend Development</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-tag-backend" name="tag" value="Backend Development">
+                            <label for="filter-tag-backend">Backend Development</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-tag-women" name="tag" value="Women In Tech">
+                            <label for="filter-tag-women">Women In Tech</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-tag-new" name="tag" value="New In Tech">
+                            <label for="filter-tag-new">New In Tech</label>
+                        </div>
+                    <!-- </div> -->
+                </form>
+            </div>
         </aside>
         <footer>
             <div class="copywrite">
