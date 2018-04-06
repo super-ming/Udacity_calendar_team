@@ -95,7 +95,7 @@ main {
     font-size: 110%;
 }
 
-b{
+b {
     color:#20DEDCFF;
 }
 
@@ -196,6 +196,8 @@ b{
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
+    position: fixed;
+    z-axis: 90;
 }
 
 .material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon,
@@ -278,6 +280,11 @@ b{
         display: block;
     }
 
+}
+
+#index-main,
+aside {
+  padding-top: 75px;
 }
 
 
