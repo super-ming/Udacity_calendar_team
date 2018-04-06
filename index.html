@@ -70,9 +70,9 @@
 
             <section id= "listView" class="cal-eventList">
 
-                <h1>Upcoming Technology Events in Seattle This Week</h1>
+                <h1>Upcoming Technology Events in Seattle:</h1>
                 <div class="event-list-view">
-                <!-- cal Eventbrite api to get a list of events in Seattle -->
+                <!-- call Eventbrite api to get a list of events by filters -->
                 <section id="events"></section>
                 </div>
             </section>
@@ -81,35 +81,43 @@
             <!--only displays in small view so filters can toggle-->
             <div class="small-view-filter"><span class="filter-link">filters</span></div>
             <div class="filter-container">
-                <h1>Event Filter</h1>
+                <!-- <h1>Event Filter</h1> -->
                 <form id="filters-type">
                 	<fieldset>
-  					<legend>Choose your event interests</legend>
+  					<legend>Event Filter</legend>
 	                    <h4>By Date</h4>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-date-today" name="date" value="today">
+	                            <input type="checkbox" id="filter-date-today" name="start_date.keyword" value="today">
 	                            <label for="filter-date-today">Today</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-date-thisWeek" name="date" value="this_week">
+	                            <input type="checkbox" id="filter-date-tomorrow" name="start_date.keyword" value="tomorrow">
+	                            <label for="filter-date-tomorrow">Tomorrow</label>
+	                        </div>
+	                        <div class="filter-item">
+	                            <input type="checkbox" id="filter-date-thisWeek" name="start_date.keyword" value="this_week">
 	                            <label for="filter-date-thisWeek">This Week</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-date-thisMonth" name="date" value="this_month">
+	                            <input type="checkbox" id="filter-date-thisMonth" name="start_date.keyword" value="this_month">
 	                            <label for="filter-date-thisMonth">This Month</label>
 	                        </div>
 	                        <p> </p>
 	                    <h4>By Neighborhood</h4>
+	                    	<div class="filter-item">
+	                            <input type="checkbox" id="filter-neighborhood-seattle" name="location.address" value="Seattle">
+	                            <label for="filter-neighborhood-seattle">Great Seattle Area</label>
+	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-neighborhood-capitalhill" name="neighborhood" value="Capitol_Hill+Seattle">
+	                            <input type="checkbox" id="filter-neighborhood-capitalhill" name="location.address" value="Capitol_Hill-Seattle">
 	                            <label for="filter-neighborhood-capitalhill">Capitol Hill</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-neighborhood-downtown" name="neighborhood" value="Downtown+Seattle">
+	                            <input type="checkbox" id="filter-neighborhood-downtown" name="location.address" value="Downtown-Seattle">
 	                            <label for="filter-neighborhood-downtown">Downtown</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-neighborhood-belltown" name="neighborhood" value="Belltown">
+	                            <input type="checkbox" id="filter-neighborhood-belltown" name="location.address" value="Belltown-Seattle">
 	                            <label for="filter-neighborhood-belltown">Belltown</label>
 	                        </div>
 	                        <p> </p>

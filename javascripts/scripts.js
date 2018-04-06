@@ -81,26 +81,35 @@ $(document).ready(function() {
 
     var token = 'XRO476MORTABZO23QCXJ';
     var $events = $("#events");
+    var $listSection = $("#listView");
+    var $calendarSection = $("#calendar-view");
+    var $loader = $('.loader');
 
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=Capitol_Hill&location.address=San_Francisco&q=Tech&date_modified.keyword=this_week', function(res) {
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=this_week&q=Tech&sort_by=-date', function(res) {
         if(res.events.length) {
             var s = "<ul class='eventList'>";
             //create an array of event by month
             //store those event in the local storage
             sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
             sessionStorage.setItem('briteEvents', JSON.stringify(res.events));
-            $('.loader').css('display','none');
+            $loader.css('display','none');
             createCalendar(date, $monthHeader, $calendarDaysGrid);
 
             for(var i=0;i<res.events.length;i++) {
                 var event = res.events[i];
+                var eventStartDT = new Date(res.events[i].start.local);
+                var eventEndDT = new Date(res.events[i].end.local);
+
                 console.dir(event);
-                s += "<li><a href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a>" + "</li>";
+                s += "<li><em><b><sup>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
             }
             s += "</ul>";
             $events.html(s);
         } else {
-            $events.html("<p>Sorry, there are no upcoming events.</p>");
+            $loader.css('display','none');
+            $calendarSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
+            $listSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
+            
         }
     });
 
