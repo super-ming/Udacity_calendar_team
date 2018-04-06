@@ -51,6 +51,22 @@ function toggleView(){
     }
 };*/
 
+/* click listener for small nav icon to display nav list
+*  Also to remove nav list
+* */
+$('.global-nav').click(function(event) {
+    $target = $(event.target);
+
+    if ($target.hasClass('small-nav-open-icon')) {
+        $('#navigation').toggleClass('view-small-nav');
+    }
+    else if ($target.hasClass('small-nav-close-icon')) {
+        $('#navigation').toggleClass('view-small-nav');
+    }
+    else if ($target.is('a')) {
+        $('#navigation').toggleClass('view-small-nav');
+    }
+});
 
 // Connect to the Eventful API
 $(document).ready(function() {
