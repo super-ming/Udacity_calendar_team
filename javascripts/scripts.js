@@ -76,7 +76,7 @@ $('#filters').click(function(event) {
     }
 });
 
-// Connect to the Eventful API
+// Connect to the Eventbrite API
 $(document).ready(function() {
 
     var token = 'XRO476MORTABZO23QCXJ';
@@ -95,7 +95,7 @@ $(document).ready(function() {
             for(var i=0;i<res.events.length;i++) {
                 var event = res.events[i];
                 console.dir(event);
-                s += "<li><a href='" + event.url + "'>" + event.name.text + "</a>" + "</li>";
+                s += "<li><a href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a>" + "</li>";
             }
             s += "</ul>";
             $events.html(s);
@@ -124,45 +124,3 @@ function briteEventByMonthObject(events) {
 }
 
 
-// Load event's image
-// event.logo_id;
-// $(document).ready(function eventImage() {
-
-//     var token = 'XRO476MORTABZO23QCXJ';
-//     var $events = $("#events");
-
-//     $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=Seattle&q=Technology&date_modified.keyword=this_week', function(res) {
-//         var eventImage = event.logo_id;
-
-//         $('#event-image').setAttribute('src',eventImage);
-//         $('#event-image').setAttribute('alt',event.name.text);
-
-//     if(res.events.length) {
-//             var s = "<ul class='eventList'>";
-//             //create an array of event by month
-//             //store those event in the local storage
-//             sessionStorage.setItem('briteEvents', JSON.stringify(briteEventByMonthObject(res.events)));
-
-//             for(var i=0;i<res.events.length;i++) {
-//                 var event = res.events[i];
-//                 console.dir(event);
-//                 s += "<li><a href='" + event.url + "'>" + event.name.text + "</a>" + "</li>";
-//             }
-//             s += "</ul>";
-//             $events.html(s);
-//         } else {
-//             $events.html("<p>Sorry, there are no upcoming events.</p>");
-//         }
-//     });
-
-
-
-
-// });
-
-
-
-// Load header
-// $(function() {
-//     $(".global-header").load("./header.html");
-//   });
