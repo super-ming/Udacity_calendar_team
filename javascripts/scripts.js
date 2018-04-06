@@ -82,7 +82,7 @@ $(document).ready(function() {
     var token = 'XRO476MORTABZO23QCXJ';
     var $events = $("#events");
 
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=Seattle+Capitol-Hill&q=Technology&date_modified.keyword=this_week', function(res) {
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=Capitol_Hill&location.address=San_Francisco&q=Tech&date_modified.keyword=this_week', function(res) {
         if(res.events.length) {
             var s = "<ul class='eventList'>";
             //create an array of event by month

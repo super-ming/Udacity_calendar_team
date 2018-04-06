@@ -23,6 +23,15 @@ h2 {
     font-weight: bold;
 }
 
+legend {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right: 2px;
+    color:#000000FF;
+    border: none;   
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -486,7 +495,7 @@ h4 {
 }
 
 #filters-type {
-    color: #b6bbc4;
+    color: #595959FF;
     margin: 5%;
 }
 
