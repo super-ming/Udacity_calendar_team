@@ -86,7 +86,7 @@ $(document).ready(function() {
     let $loader = $('.loader');
     let filters;
 
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=Web_Development&sort_by=date', function(res) {
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=HTML_CSS&sort_by=date', function(res) {
         if(res.events.length) {
             let s = "<ul class='eventList'>";
             //create an array of event by month
@@ -102,7 +102,7 @@ $(document).ready(function() {
                 let eventEndDT = new Date(res.events[i].end.local);
 
                 console.dir(event);
-                s += "<li><em><b><sup>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
+                s += "<li><em><b><sup class=\'uppercase\''>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
             }
             s += "</ul>";
             $events.html(s);

@@ -99,6 +99,9 @@ b {
     color:#20DEDCFF;
 }
 
+.uppercase { 
+    text-transform: uppercase; 
+}
 
 /* in all sizes smaller than desktop, do not show the calendar */
 /* and do not give toggle to switch to calendar */
@@ -355,12 +358,13 @@ footer {
 
 /* The switch - the box around the slider */
 .switch {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 10px;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    /*margin-top: 5px;*/
     position: relative;
     top: 5px;
-    width: 62px;
-    height: 27px;
+    width: 210px;
+    height: 30px;
 }
 
 /* Hide default HTML checkbox */
@@ -400,11 +404,11 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(36px);
+  transform: translateX(185px);
 }
 
 .slider:after {
- content:'List';
+ content:'View in Event List';
  color: black;
  display: block;
  position: absolute;
@@ -416,7 +420,7 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider:after {
-    content:'Calendar';
+    content:'View in Calendar';
 }
 
 /* Rounded sliders */
@@ -430,7 +434,7 @@ input:checked + .slider:after {
 
 .cal-eventList {
     height: auto;
-    width: 80%;
+    width: 100%;
     background-color:#FFFFFFFF;
     display: none;
 }
