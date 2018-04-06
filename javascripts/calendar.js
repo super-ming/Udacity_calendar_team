@@ -1,10 +1,10 @@
-var date = new Date();
-var today = new Date();
-var $monthHeader = $('#calendar-view h2');
-var $calendarDaysGrid = $('.cal-days');
-var $navBack = $('.cal-nav-back');
-var $navForward = $('.cal-nav-forward');
-var $eventDays;
+let date = new Date();
+let today = new Date();
+let $monthHeader = $('#calendar-view h2');
+let $calendarDaysGrid = $('.cal-days');
+let $navBack = $('.cal-nav-back');
+let $navForward = $('.cal-nav-forward');
+let $eventDays;
 
 
 //add calendar based on today's date.
@@ -13,7 +13,7 @@ var $eventDays;
 //add listener for back navigation button
 //will change calendar to prev month
 $navBack.click(function() {
-    var backDate;
+    let backDate;
 
     date.setDate(15); //set to the 15th to avoid issue from diff month length
     date.setMonth(date.getMonth()-1);
@@ -24,7 +24,7 @@ $navBack.click(function() {
 //add listener for forward navigation button
 //will change calendar to next month
 $navForward.click(function() {
-    var forwardDate;
+    let forwardDate;
 
     date.setDate(15); //set to the 15th to avoid issue from diff month length
     date.setMonth(date.getMonth()+1);
@@ -49,7 +49,7 @@ $('#calendar-view').click(function(event) {
 });
 
 function createCalendar(date, $headerDOM, $calendarGridDOM) {
-    var $eventDays;
+    let $eventDays;
 //remove existing cal grid if there is one.
     $calendarGridDOM.empty();
 
@@ -59,7 +59,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
 
 //returns the a string of the month based on the parameter's date object
     function getCurrentMonth(date) {
-        var months = ['january','february','march','april','may','june','july',
+        let months = ['january','february','march','april','may','june','july',
             'august','september','october','november','december'];
         return months[date.getMonth()];
     }
@@ -67,15 +67,15 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
 //creates an array of time elements with the datetime attribute set to the
 // months of the parameter's date object
     function getCalendarGrid (date, today) {
-        var daysArray= [];
-        var firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1 );
-        var lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() +1, 0 );
-        var firstWeekDay = firstDayOfMonth.getDay() +1;
-        var calendarDate = firstDayOfMonth;
-        var currMonthEventData = JSON.parse(sessionStorage.getItem("briteEventsByMonth"))[date.getMonth()];
-        var currDayEventData;
+        let daysArray= [];
+        let firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1 );
+        let lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() +1, 0 );
+        let firstWeekDay = firstDayOfMonth.getDay() +1;
+        let calendarDate = firstDayOfMonth;
+        let currMonthEventData = JSON.parse(sessionStorage.getItem("briteEventsByMonth"))[date.getMonth()];
+        let currDayEventData;
 
-        for(var dayBox=1; dayBox <= 35; dayBox++) {
+        for(let dayBox=1; dayBox <= 35; dayBox++) {
             if (dayBox >= firstWeekDay &&
                 dayBox-firstWeekDay <
                 lastDayOfMonth.getDate())
@@ -102,7 +102,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
         //sets datetime attr to date parameter
         //sets class attr of "today" if date param matches today param
         function createTimeElement(date, today, currDayEventData) {
-            var attrObj = {};
+            let attrObj = {};
 
             attrObj['datetime'] = datetimeFormatConverter(date);
 
@@ -121,12 +121,12 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
             //HTML datetime attr syntax YYYY-MM-DDThh:mm:ssTZD
             //converts Javascript's Date object format to HTML attr format
             function datetimeFormatConverter(date) {
-                var day = date.getDate() < 10?
+                let day = date.getDate() < 10?
                     String('0' + date.getDate())
                     :
                     date.getDate();
 
-                var month = date.getMonth() + 1;
+                let month = date.getMonth() + 1;
                 month = month < 10? String('0' + month) : month;
 
                 return date.getFullYear() + '-' + month + '-' + day;
@@ -138,12 +138,12 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
             //these will be displayed in calendar view
 
             currDayEventData.sort((function (a, b) {
-                var aDate = new Date(a.start.local);
-                var bDate = new Date(b.start.local);
+                let aDate = new Date(a.start.local);
+                let bDate = new Date(b.start.local);
                 return aDate - bDate;
             }));
-            var eventDetails = $('<ul>').append(currDayEventData.map(function(event){
-                var time = new Date(event.start.local);
+            let eventDetails = $('<ul>').append(currDayEventData.map(function(event){
+                let time = new Date(event.start.local);
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
@@ -160,7 +160,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
 }
 
 
-//var storage = JSON.parse(sessionStorage.getItem("briteEvents"));
+//let storage = JSON.parse(sessionStorage.getItem("briteEvents"));
 //storage.map(function(event) {console.log(event)});
 
 

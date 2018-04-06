@@ -1,6 +1,6 @@
 
 
-var neighborhoodFilter = $(".filter-title");
+let neighborhoodFilter = $(".filter-title");
 neighborhoodFilter.click(function() {
     $(this).next().toggle();
 });
@@ -79,15 +79,16 @@ $('#filters').click(function(event) {
 // Connect to the Eventbrite API
 $(document).ready(function() {
 
-    var token = 'XRO476MORTABZO23QCXJ';
-    var $events = $("#events");
-    var $listSection = $("#listView");
-    var $calendarSection = $("#calendar-view");
-    var $loader = $('.loader');
+    let token = 'XRO476MORTABZO23QCXJ';
+    let $events = $("#events");
+    let $listSection = $("#listView");
+    let $calendarSection = $("#calendar-view");
+    let $loader = $('.loader');
+    let filters;
 
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=this_week&q=Tech&sort_by=-date', function(res) {
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=Web_Development&sort_by=date', function(res) {
         if(res.events.length) {
-            var s = "<ul class='eventList'>";
+            let s = "<ul class='eventList'>";
             //create an array of event by month
             //store those event in the local storage
             sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
@@ -95,10 +96,10 @@ $(document).ready(function() {
             $loader.css('display','none');
             createCalendar(date, $monthHeader, $calendarDaysGrid);
 
-            for(var i=0;i<res.events.length;i++) {
-                var event = res.events[i];
-                var eventStartDT = new Date(res.events[i].start.local);
-                var eventEndDT = new Date(res.events[i].end.local);
+            for(let i=0;i<res.events.length;i++) {
+                let event = res.events[i];
+                let eventStartDT = new Date(res.events[i].start.local);
+                let eventEndDT = new Date(res.events[i].end.local);
 
                 console.dir(event);
                 s += "<li><em><b><sup>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
@@ -121,9 +122,9 @@ $(document).ready(function() {
 //is zero based just like Date object's getMonth() method.
 //january is index 0
 function briteEventByMonthObject(events) {
-    var byMonth = [];
+    let byMonth = [];
 
-    for(var month =0; month < 12; month++) {
+    for(let month =0; month < 12; month++) {
         byMonth.push(events.filter(function(event) {
             return Number(event.start.local.substring(5,7))-1 === month;
         }));

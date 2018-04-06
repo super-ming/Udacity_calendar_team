@@ -1,9 +1,9 @@
-var gMap = null;
-var gMarkerCenter = null;
+let gMap = null;
+let gMarkerCenter = null;
  
 function initMap() {
     //latlng setting
-    var mapOptions = {
+    let mapOptions = {
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -12,9 +12,9 @@ function initMap() {
     gMap = new google.maps.Map(document.getElementById("map"), mapOptions);
 
     //Geocoder object
-    var geocoder = new google.maps.Geocoder();
+    let geocoder = new google.maps.Geocoder();
     //get the address from the p
-    var address = $('[id=event_address]').text();
+    let address = $('[id=event_address]').text();
     //address searching
     geocoder.geocode(
         {
@@ -26,7 +26,7 @@ function initMap() {
             //get a map matching the latlng
             gMap.setCenter(results[0].geometry.location);
             //get a marker mathing the latlng
-            var pos = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+            let pos = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
             gMarkerCenter.setPosition(pos);
             } else {
             //error message
@@ -39,7 +39,7 @@ function initMap() {
  
 //Marker setting
 function drawMarkerCenterInit(pos) {
-    var markerCenter = new google.maps.Marker({
+    let markerCenter = new google.maps.Marker({
         position: pos,
         map: gMap,
         draggable: false 

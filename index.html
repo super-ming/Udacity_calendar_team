@@ -70,7 +70,7 @@
 
             <section id= "listView" class="cal-eventList">
 
-                <h1>Upcoming Technology Events in Seattle:</h1>
+                <h3>We Find These Tech Events for You:</h3>
                 <div class="event-list-view">
                 <!-- call Eventbrite api to get a list of events by filters -->
                 <section id="events"></section>
@@ -101,6 +101,10 @@
 	                        <div class="filter-item">
 	                            <input type="checkbox" id="filter-date-thisMonth" name="start_date.keyword" value="this_month">
 	                            <label for="filter-date-thisMonth">This Month</label>
+	                        </div>
+	                        <div class="filter-item">
+	                            <input type="checkbox" id="filter-date-any" name="start_date.keyword" value="">
+	                            <label for="filter-date-any">Anytime in the Future</label>
 	                        </div>
 	                        <p> </p>
 	                    <h4>By Neighborhood</h4>
@@ -141,19 +145,15 @@
 	                        <p> </p>
 	                    <h4>By Tag</h4>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-tag-frontend" name="tag" value="Frontend-Development">
-	                            <label for="filter-tag-frontend">Frontend Development</label>
+	                            <input type="checkbox" id="filter-tag-frontend" name="tag" value="Web_Development">
+	                            <label for="filter-tag-frontend">Web Development</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-tag-backend" name="tag" value="Backend-Development">
-	                            <label for="filter-tag-backend">Backend Development</label>
-	                        </div>
-	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-tag-women" name="tag" value="Women">
+	                            <input type="checkbox" id="filter-tag-women" name="tag" value="tech-women">
 	                            <label for="filter-tag-women">Women In Tech</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-tag-new" name="tag" value="Beginner">
+	                            <input type="checkbox" id="filter-tag-new" name="tag" value="tech-new_in">
 	                            <label for="filter-tag-new">New In Tech</label>
 	                        </div>
 	                        <p> </p>
