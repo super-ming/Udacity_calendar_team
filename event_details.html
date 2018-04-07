@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/page_styles.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <base target="_blank">
     <title>Event Details</title>
 </head>
@@ -15,33 +16,30 @@
                 <a href="index.html" target="_top">What is the next tech event in Seattle?</a>
             </div>
             <nav role="navigation" class="global-nav">
-                <ul id="navigation">
-                    <li><a href = "index.html" target = "_self">Home</a></li>
-                    <li><a href = "about_page.html" target = "_self">About</a></li>
-                </ul>
+                <i class="material-icons small-nav-open-icon">dehaze</i>
+                <div id="navigation">
+                    <i class="material-icons small-nav-close-icon">clear</i>
+                    <ul>
+                        <li><a href = "index.html" target = "_self">Home</a></li>
+                        <li><a href = "signup_page.html" target = "_self">Sign Up</a></li>
+                        <li><a href = "login.html" target = "_self">Login</a></li>
+                        <li><a href = "submission_page.html" target = "_self">Submit Event</a></li>
+                        <li><a href = "about_page.html" target = "_self">About Us</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
-            <div class="event-headline">
-                <!--Date-->April 4 2018
-                <!--Time-->6:00 PM – ?:00 PM
-                <h1>Washington Project Meeting #6 or so</h1>
-                <p id="event_address">1521 10th Avenue, Seattle</p>
-            </div>
-            <div class="listing-hero listing-hero--bkg clrfix fx--delay-6 fx--fade-in">
-                    <picture content="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=1000&amp;rect=0%2C0%2C1280%2C640&amp;s=ac55e44afc9555717192ec860b27d1e1">
-                        <source srcset="
-                            https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=480&amp;rect=0%2C0%2C1280%2C640&amp;s=dc928f9413e4e487ab93b3ae0668ab24 480w,
-                            https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=600&amp;rect=0%2C0%2C1280%2C640&amp;s=7d22db2571d31e19ec352a22c2bdcd7b 600w,
-                            https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42472135%2F170432436921%2F1%2Foriginal.jpg?w=800&amp;rect=0%2C0%2C1280%2C640&amp;s=77a6190039932b536276b6ffa34d0a7b 800w
-                            " sizes="100vw">
-                        <img class="listing-hero-image js-picturefill-img listing-image--main" data-automation="listing-hero-image" alt="">
-                    </picture>
-                </div>
     <div class="details-wrapper">
         <main class="details_main">
+            <div class="event-headline">
+                <h1 class="details_title">Washington Project Meeting #6</h1>
+                <i class="far fa-clock details_icons" style="margin-left: -0.1em;"></i><!--Date-->April 4, 2018,<!--Time--> 6:00 PM – 8:00 PM<br>
+                <i class="fas fa-map-marker details_icons"></i><span id="event_address">1521 10th Avenue, Seattle</span>
+            </div>
+
             <div class="event-link">
-                <!--Link to the event page--><a href="https://www.facebook.com/events/2022931674638015/">Grow w/ Google x Udacity - Washington State</a>
+                <i class="fas fa-info details_icons" style="margin-left: 0.2em;"></i></i><a href="https://www.facebook.com/events/2022931674638015/">Grow w/ Google x Udacity - Washington State</a>
             </div>
             <article class="event-description">
                 <p>Lets meet and go over the Washington Group Project details. <br>For those of you who cannot attend at this location, I will have video feed available on Google Hangouts so you can join the conversation. Link here:

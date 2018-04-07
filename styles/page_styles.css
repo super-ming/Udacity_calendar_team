@@ -293,13 +293,33 @@ aside {
 
 
 /*Event details*/
+.details_title {
+    font-family: 'Mina', sans-serif;
+    color: #273841;
+    font-weight: bold;
+}
+
 .details-wrapper {
     display: flex;
-    flex-direction: column;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        word-wrap: break-word;
+    }
+    .details-wrapper {
+        flex-direction: column;
+    }
 }
 
     #event_address {
         margin-bottom: 0;
+    }
+
+    .details_icons {
+        color: #729fb2;
+        margin-right:1em;
     }
 
     .details-aside {
@@ -316,11 +336,6 @@ aside {
     overflow-wrap : break-word;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-.event-headline {
-    height: 14%;
-    margin: 1em;
 }
 
 .event-description p {
