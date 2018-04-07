@@ -87,14 +87,14 @@ $(document).ready(function(event) {
     let $listSection = $("#listView");
     let $calendarSection = $("#calendar-view");
     let $loader = $('.loader');
-    let $filterForm = $('#filters-type');
-    let selectFilters = window.location.href.split('?')[1];
+    // let $filterForm = $('#filters-type');
+    // let selectFilters = window.location.href.split('?')[1];
 
 
 
     //Submit event filters to get relevant events from Eventbrite API
     // $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+"&"+selectFilters+'&location.address=seattle&q=tech&sort_by=date', function(res) {
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=tech&sort_by=date', function(res) {
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=HTML_CSS&q=tech-new_in&sort_by=date', function(res) {
         if(res.events.length) {
             let s = "<ul class='eventList'>";
             // alert (window.location.href.split('?')[1]);
