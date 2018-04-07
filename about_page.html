@@ -33,75 +33,123 @@
             </div>
         </header>
 
-  <main id='about-main'>
+   <main id='about-main'>
   
+                 
     <div id='about-container'>
 
-      <div id='about-us'>
-        <h1>Growing Together</h1>
-        <p>This site was put together in early 2018 by a group of students from the Seattle area taking the "challenge course" section of <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001">Udacity's Front End Web Development Nanodegree</a> program, as part of the <a href="https://www.udacity.com/grow-with-google">Grow with Google scholarship</a>.</p><br>
-        <p>We are ecstatic to continue our learning journies in tech.</p> <br>
-        <p>Building this site inspired us to push our capacities as developers and effective team members to the next level. We hope it might help you find and share opportunities for inspiration and for learning, for growth, and for community, too.</p><br>
-        <p>Code on.</p>
-      </div>
+    <!--      /*Hovercards for Team Member Bios*/ -->
+    
+    <div class="hovercard" id="Yuka-Mullen-bio">
+      <span class="close-hovercard">&times;</span>
+      <p class='bio'>Yuka Mullen is a Japanese cultural workshop instructor who provides classes on Vashon Island, WA. <br> <br>Yuka worked as a web developer in Japan. <br> <br> She now enjoys working and learning with the team from the Udacity Front End Web Development Nanodegree course in the Grow with Google scholarship program.<br><br>You can find Yuka on <a href="https://www.linkedin.com/in/yuka-mullen-028838a9/">LinkedIn<a> and on <a href = "https://github.com/Quiwah">GitHub</a>.</p>.
+    </div>
+
+    <div class="hovercard" id="Jinjin-Ge-bio">
+      <div class="popover-content">
+        <span class="close-hovercard">&times;</span>
+        <p>Jinjin Ge is a growing hacker working in the travel industry. She loves backpacking, skiing and playing piano in her spare time.<br><br>You can find Jinjin on <a href=" https://www.linkedin.com/in/jinjinge/">LinkedIn</a>.</p>
+      </div> 
+    </div>
+
+    <div class="hovercard" id="Alex-Tran-bio">
+      <div class="popover-content">
+        <span class="close-hovercard">&times;</span>
+        <p>Alex Tran is a UX Designer who can code. He’s based in beautiful Seattle, WA. <br><br>When not designing, he can be found rock climbing, eating banh mi sandwiches, or hanging out with his partner and dog.</p>
+      </div> 
+    </div>
+
+    <div class="hovercard" id="">
+      <div class="popover-content">
+        <span class="close-hovercard">&times;</span>
+        <p>Bio bio bio bio</p> 
+      </div> 
+    </div>
+
+    <div class="hovercard" id="">
+      <div class="popover-content">
+        <span class="close-hovercard">&times;</span>
+        <p>Robert Grunau is the resident backend development rockstar.</p> 
+      </div> 
+    </div>
+
+
+       
+        <!-- /*About Us" i.e. "Growing Together" section*/ -->
+        <div id='about-us'>
+            <h1>Growing Together</h1>
+                <p>This site was put together in early 2018 by a group of students from the Seattle area taking the "challenge course" portion of <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001">Udacity's Front End Web Development Nanodegree</a>, as part of the <a href="https://www.udacity.com/grow-with-google">Grow with Google scholarship</a> program.</p><br>
+                <p>We are ecstatic to continue our learning journies in tech.</p> <br>
+                <p>Building this site inspired us to push our capacities as developers and effective team members to the next level. We hope it might help you find and share opportunities for inspiration and for learning, for growth, and for community, too.</p><br>
+                <p>Code on.</p>
+        </div>
   
+<!-- /*Team Roster section*/ -->
       <div id='about-team'>
-        <h2>Meet the Team</h2>
+      <h2>Meet the Team</h2>
+        <h3>- Click a team member's profile to learn more about them.</h3>
+        <!--       <div id ='roster-container'> -->
         <div id='roster'>
+          
           <div class='roster-row' id='roster-row-1'>
             <div class='profile'>
               <p class='name'>Jacqueline Bostow</p>
                <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+              <p class='focus'>- Focus focus<br>- Focus focus</p>
             </div>
-            <div class='profile'>
-              <p class='name'>JinJin Ge</p>
-              <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+            <div class='profile' id='Jinjin-Ge-profile'>
+              <p class='name'>Jinjin Ge</p>
+              <img id='profile-image' src="http://res.cloudinary.com/dnyzg8tsw/image/upload/v1523025879/200x200.jpg">
+              <p class='focus'>- Extraction of events from source API<br>- Event filter functionality</p>
             </div>
-            <div class='profile'>
+            <div class='profile' id='Robert-Grunau-profile'>
               <p class='name'>Robert Grunau</p>
               <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-                <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+              <p class='focus'>- Focus focus<br>- Focus focus</p>
             </div>
           </div>
+
           <div class='roster-row' id='roster-row-2'>
             <div class='profile'>
               <p class='name'>Ming Ho</p>
               <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+              <p class='focus'>- Focus focus<br>- Focus focus</p>
             </div>
             <div class='profile'>
               <p class='name'>Taylor Isom</p>
               <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+              <p class='focus'>- Focus focus<br>- Focus focus</p>
             </div>
-            <div class='profile'>
+            <div class='profile' id='Yuka-Mullen-profile'>
               <p class='name'>Yuka Mullen</p>
-              <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+              <img id='profile-image' src="http://res.cloudinary.com/dnyzg8tsw/image/upload/v1523025884/yuka.jpg">
+              <p class='focus'>- Event Details page<br>- Color scheme</p>
             </div>
           </div>
+
           <div class='roster-row' id='roster-row-3'>
-            <div class='profile'>
+            <div class='profile' id='Jacob-Olson-profile'>
               <p class='name'>Jacob Olson</p>
               <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+              <p class='focus'>- About page</p>
             </div>
             <div class='profile'>
               <p class='name'>Torey Schell</p>
               <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+              <p class='focus'>- Focus focus<br>- Focus focus</p>
             </div>
-            <div class='profile'>
-              <p class='name'>Alexander Tran</p>
-              <img id='profile-image' src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
-              <p class='bio'>Bio bio bio <br> bio bio bio.</p>
+            <div class='profile' id='Alex-Tran-profile'>
+              <p class='name'>Alex Tran</p>
+              <img id='profile-image' src="http://res.cloudinary.com/dnyzg8tsw/image/upload/v1523032995/alex.jpg">
+              <p class='focus'>- UX Advisor</p>
            </div>
           </div> 
       </div>
+      <!--       </div> -->
       </div>
 
+ 
+      <!-- /*Contact section*/ -->
       <aside id='about-contact'>
         <h2>Get in Touch</h2>
           <div id='contact-container'>
@@ -118,15 +166,11 @@
               <br>
               <textarea id="message" name="message" placeholder="What's on your mind ... ?" style="height:200px"></textarea>
               <br>
-              <input type="submit" value="Send">
-            </form>
-          </div>
+              <input type="submit" value="Send" id='send'>
       </aside>
 
     </div>
-
 </main>
-
 
         <footer>
             <div class="copywrite">
