@@ -76,19 +76,28 @@ $('#filters').click(function(event) {
     }
 });
 
+
+
+
 // Connect to the Eventbrite API
-$(document).ready(function() {
+$(document).ready(function(event) {
 
     let token = 'XRO476MORTABZO23QCXJ';
     let $events = $("#events");
     let $listSection = $("#listView");
     let $calendarSection = $("#calendar-view");
     let $loader = $('.loader');
-    let filters;
+    let $filterForm = $('#filters-type');
+    let selectFilters = window.location.href.split('?')[1];
 
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=HTML_CSS&sort_by=date', function(res) {
+
+
+    //Submit event filters to get relevant events from Eventbrite API
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+"&"+selectFilters+'&location.address=seattle&q=tech&sort_by=date', function(res) {
+    // $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=HTML_CSS&sort_by=date', function(res) {
         if(res.events.length) {
             let s = "<ul class='eventList'>";
+            // alert (window.location.href.split('?')[1]);
             //create an array of event by month
             //store those event in the local storage
             sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
@@ -114,7 +123,9 @@ $(document).ready(function() {
         }
     });
 
+    
 
+event.preventDefault();
 
 });
 

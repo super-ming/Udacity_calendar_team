@@ -1002,3 +1002,14 @@ textarea {
     margin-bottom: 15px;
 }
 
+input[type=submit] {
+     font-family: 'Mina', sans-serif; 
+     font-size: 15px;
+
+}
+
+/*button {
+     font-family: 'Mina', sans-serif; 
+     font-size: 15px;
+
+}*/
