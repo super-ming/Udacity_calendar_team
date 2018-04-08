@@ -78,9 +78,8 @@ $('#filters').click(function(event) {
 
 
 
-
 // Connect to the Eventbrite API
-$(document).ready(function(event) {
+$(document).ready(function() {
 
     let token = 'XRO476MORTABZO23QCXJ';
     let $events = $("#events");
@@ -89,12 +88,13 @@ $(document).ready(function(event) {
     let $loader = $('.loader');
     // let $filterForm = $('#filters-type');
     // let selectFilters = window.location.href.split('?')[1];
+    let filers='&q=';
 
 
 
     //Submit event filters to get relevant events from Eventbrite API
     // $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+"&"+selectFilters+'&location.address=seattle&q=tech&sort_by=date', function(res) {
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=seattle&start_date.keyword=&q=HTML_CSS&q=tech-new_in&sort_by=date', function(res) {
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+filers+'&location.address=seattle&start_date.keyword=&q=HTML_CSS&q=tech-new_in&sort_by=date', function(res) {
         if(res.events.length) {
             let s = "<ul class='eventList'>";
             // alert (window.location.href.split('?')[1]);
@@ -109,9 +109,14 @@ $(document).ready(function(event) {
                 let event = res.events[i];
                 let eventStartDT = new Date(res.events[i].start.local);
                 let eventEndDT = new Date(res.events[i].end.local);
+                let freeEvent='';
+
+                if (event.is_free){
+                    freeEvent = 'FREE';
+                }
 
                 console.dir(event);
-                s += "<li><em><b><sup class=\'uppercase\''>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
+                s += "<li><em><b><sup class=\'uppercase\''>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
             }
             s += "</ul>";
             $events.html(s);
@@ -124,8 +129,6 @@ $(document).ready(function(event) {
     });
 
     
-
-event.preventDefault();
 
 });
 

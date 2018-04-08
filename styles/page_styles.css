@@ -110,6 +110,12 @@ b {
     text-transform: uppercase; 
 }
 
+#free-sytle {  
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 140% ;
+  color:#FF0030FF;
+}
+
 /* in all sizes smaller than desktop, do not show the calendar */
 /* and do not give toggle to switch to calendar */
 /* show list view by default */
