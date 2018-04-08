@@ -2,6 +2,39 @@
 
 var neighborhoodFilter = $(".filter-title");
 let $toggler = $("#toggleButton");
+let $success = $(".success-modal");
+let $send = $("button[type='submit']");
+let $ok = $(".ok");
+let loggedIn = false;
+
+$send.click(function(e){
+    e.preventDefault();
+    let id = $(this).closest(".submit-container").find(".success-modal").attr("id");
+    alert("Thanks for signing up!");
+    /*switch() {
+        case signupSuccess:
+            alert("Thanks for signing up!");
+            break;
+
+
+    }
+    if (id == "signupSuccess"){
+        alert("Thanks for signing up!");
+    } else if (id == "loginSquccess"){
+        alert("You're logged in!");
+    } else (id == "submitSuccess"){
+        alert("Your event has been added!");
+    }*/
+
+    if ($success.css("display") === "none"){
+        $success.attr("style", "display:flex");
+    }
+});
+
+$(".ok,.signup-close").click(function(){
+    loggedIn = true;
+    $(location).attr('href','./index.html');
+});
 
 //Add event listener for click to toggle either calendar or list view
 $toggler.click(function(){
@@ -20,34 +53,20 @@ function toggleView(){
     }
 };
 
-//Vanilla javascript version
-/*document.getElementById('toggleButton').addEventListener('click', function () {
-    toggleView();
-});
-
-function toggleView(){
-    let calView = document.getElementById("calendarView");
-    let listView = document.getElementById("listView");
-    if (calView.style.display === "none") {
-        calView.style.display = "inline-block";
-        listView.style.display = "none";
-    } else {
-        calView.style.display = "none";
-        listView.style.display = "inline-block";
-    }
-};*/
-
 neighborhoodFilter.click(function() {
     $(this).next().toggle();
 });
 
 // Connect to the Eventful API
 $(document).ready(function() {
+    if (loggedIn){
+        $login.attr("style","display:inline-block");
+    }
 
     var token = 'XRO476MORTABZO23QCXJ';
     var $events = $("#events");
 
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=Seattle&q=Technology&date_modified.keyword=this_week', function(res) {
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+'&location.address=Seattle&q=Technology&date_modified.keyword=this_week&sort_by=date', function(res) {
         if(res.events.length) {
             var s = "<ul class='eventList'>";
             //create an array of event by month
@@ -65,9 +84,6 @@ $(document).ready(function() {
             $events.html("<p>Sorry, there are no upcoming events.</p>");
         }
     });
-
-
-
 
 });
 
@@ -97,8 +113,8 @@ $(document).ready(function eventImage() {
         var eventImage = event.logo_id;
 
         $('#event-image').setAttribute('src',eventImage);
-        $('#event-image').setAttribute('alt',event.name.text);    
-    
+        $('#event-image').setAttribute('alt',event.name.text);
+
     if(res.events.length) {
             var s = "<ul class='eventList'>";
             //create an array of event by month
@@ -116,13 +132,10 @@ $(document).ready(function eventImage() {
             $events.html("<p>Sorry, there are no upcoming events.</p>");
         }
     });
-
-
-
-
+    if (loggedIn === "true"){
+        $login.attr("style","display:inline-block");
+    }
 });
-
-
 
 // Load header
 $(function() {

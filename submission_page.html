@@ -30,9 +30,11 @@
         </header>
 
         <main class='submit-main'>
-            <form action="action_page.php" style="border:1px solid #ccc">
+            <form action="action_page.php" class="submit-form">
               <div class="submit-container">
+                <div id="submit-title" class="signup-title">
                 <h1>Event Submission</h1>
+                </div>
                 <p>Please fill out this form to add a new event.</p>
 
                 <label for="event name"><b>Event Name</b></label>
@@ -55,18 +57,31 @@
                 <input type="text" placeholder="Enter Event Address/Location" name="event-location" required>
 
                 <label for="webpage"><b>Event Webpage</b></label>
-                <input type="text" placeholder="Enter Event Webpage" name="event-webpage" >                
+                <input type="text" placeholder="Enter Event Webpage" name="event-webpage" >
 
                 <label for="details"><b>Event Details</b></label>
-                <textarea placeholder="Enter Event Details" name="event-details" required></textarea>
+                <textarea id="text-form" placeholder="Enter Event Details" name="event-details" required></textarea>
 
 
                 <div class="clearfix">
                     <button type="submit" class="addeventbtn">Add Event</button>
                     <button type="button" class="cancelbtn">Cancel</button>
                 </div>
-            </div>
-          </form>
 
-
+                <div id="submitSuccess" class="success-modal">
+                    <span class="signup-close" title="Submission Close">&times;</span>
+                    <div class="submit-success">
+                        <p>Your event has been successfully submitted!</p>
+                    </div>
+                    <div class="ok">
+                        <button name="ok" type="button" class="okbtn">OK</button>
+                    </div>
+                </div>
+                </div>
+              </form>
         </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./javascripts/scripts.js"></script>
+</body>
+</html>

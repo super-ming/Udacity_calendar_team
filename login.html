@@ -30,9 +30,11 @@
         </header>
 
         <main class='submit-main'>
-            <form action="action_page.php" style="border:1px solid #ccc">
+            <form action="action_page.php" class="submit-form">
               <div class="submit-container">
+                <div id="login-title" class="signup-title">
                 <h1>Log In</h1>
+                </div>
                 <hr>
 
                 <label for="email"><b>Email</b></label>
@@ -46,11 +48,24 @@
                 </label>
 
             <div class="clearfix">
-                <button type="button" class="loginbtn">Log In</button>
-                <button type="submit" class="cancelbtn">Cancel</button>
+                <button type="submit" class="loginbtn">Log In</button>
+                <button type="button" class="cancelbtn">Cancel</button>
+            </div>
+            <div id="loginSuccess" class="success-modal">
+                <span class="signup-close" title="Login Close">&times;</span>
+                <span class="close" title="Close-Window"></span>
+                <div class="login-success">
+                    <p>You're logged in!</p>
+                </div>
+                <div class="ok">
+                    <button name="ok" type="button" class="okbtn">OK</button>
+                </div>
             </div>
             </div>
-          </form>
-
-
+            </form>
         </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./javascripts/scripts.js"></script>
+    </body>
+    </html>

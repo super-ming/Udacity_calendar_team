@@ -609,7 +609,10 @@ a:link {
 }
 
 /* Sign up page */
-
+.submit-form {
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
 /*using same wrapper for sign up, login, submission page*/
 .submit-wrapper {
     display: grid;
@@ -637,7 +640,7 @@ a:link {
 .submit-container {
     display: flex;
     flex-flow: column nowrap;
-    padding: 10px;
+    padding: 15px;
 }
 
 .submit-container > input, .event_time > input {
@@ -674,6 +677,47 @@ input[type=text]:focus, input[type=password]:focus {
 
 .cancelbtn {
   padding: 14px 20px;
+}
+
+.success-modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 30%; /* Full width */
+    height: 30%; /* Full height */
+    background-color: #dcdee2;
+    padding-top: 10px;
+    margin: 15% auto 15% 15%;
+    border: 2px solid #8FBEDB;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-success {
+    text-align: center;
+}
+
+.signup-close {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.signup-close:hover,
+.signup-close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+#login {
+    margin-top: 40px;
+    display: none;
 }
 
 /* Login page*/
@@ -715,8 +759,8 @@ input[name="event-time"], #timezone {
     flex-direction: row;
 }
 
-textarea {
-    width: 90%;
+#text-form {
+    width: 97%;
     min-height: 400px;
     background: #f1f1f1;
     font-family: 'Mina', sans-serif;
