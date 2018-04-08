@@ -23,20 +23,27 @@ h2 {
     font-weight: bold;
 }
 
-h1 {
-    font-size: 130%;
+h4 {
+    font-family: 'Mina', sans-serif; 
     font-weight: bold;
-    color:#000000FF;
-}
+    color: #353535FF;
+/*    font-size: 100%;
+*/}
 
 legend {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Mina', sans-serif; 
     font-weight: bold;
-    font-size: 110%;
+    font-size: 130%;
     padding-left: 2px;
     padding-right: 2px;
     color:#000000FF;
     border: none;   
+}
+
+.filter-item{
+    font-family: 'Mina', sans-serif; 
+    color: #5B5B5BFF;
+    font-size: 85%;
 }
 
 .wrapper {
@@ -536,9 +543,7 @@ input:checked + .slider:after {
     overflow: inherit;
 }
 
-h4 {
-    color: #353535FF;
-}
+
 
 #filters-type {
     color: #595959FF;
@@ -1022,8 +1027,3 @@ input[type=button] {
 
 }
 
-/*button {
-     font-family: 'Mina', sans-serif; 
-     font-size: 15px;
-
-}*/
