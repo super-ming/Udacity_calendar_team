@@ -22,6 +22,8 @@ function toggleView(){
         calView.hide();
         listView.attr("style", "display:inline-block");
     }
+
+
 };
 
 //if screen is smaller than 992px wide then remove style attr
@@ -76,7 +78,18 @@ $('#filters').click(function(event) {
     }
 });
 
+//Get the selected items from filter form
+function getSelectedFilters() {
 
+    let str = $(".submit_filters").serialize();
+    let selectFilters = '&';
+    selectFilters += str;
+    selectFilters +="&";     
+
+
+    return selectFilters;
+  
+};
 
 // Connect to the Eventbrite API
 $(document).ready(function() {
@@ -86,56 +99,53 @@ $(document).ready(function() {
     let $listSection = $("#listView");
     let $calendarSection = $("#calendar-view");
     let $loader = $('.loader'); 
-    
 
     //Get events by default fitlers
     let selectFilters = getSelectedFilters();
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'sort_by=date', function(res) {
-        if(res.events.length) {
-            let s = "<ul class='eventList'>";
-   
-            //create an array of event by month
-            //store those event in the local storage
-            sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
-            sessionStorage.setItem('briteEvents', JSON.stringify(res.events));
-            $loader.css('display','none');
-            createCalendar(date, $monthHeader, $calendarDaysGrid);
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'q=science--tech&include_all_series_instances=false&sort_by=date', function(res) {
+        let s = "<ul class='eventList'>";
+        console.log(res.events.length);
+        //create an array of event by month
+        //store those event in the local storage
+        sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
+        sessionStorage.setItem('briteEvents', JSON.stringify(res.events));
+        $loader.css('display','none');
+        createCalendar(date, $monthHeader, $calendarDaysGrid);
 
-            for(let i=0;i<res.events.length;i++) {
-                let event = res.events[i];
+        for(let i=0;i<res.events.length;i++) {
+            let event = res.events[i];
 
-                let eventStartDT = new Date(event.start.local);
-                let eventEndDT = new Date(event.end.local);
-                let eventStatus = event.status;
-                let freeEvent='';
+            let eventStartDT = new Date(event.start.local);
+            let eventEndDT = new Date(event.end.local);
+            let eventStatus = '';
+            let freeEvent='';
 
-                if (event.is_free){
-                    freeEvent = 'FREE';
-                }
-
-                if (event.status.toLowerCase() === 'live'){
-                    eventStatus = 'open';
-                }
-
-                console.dir(event);
-                s += "<li><em><b><sup class=\'uppercase\''>"+eventStatus+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
+            if (event.is_free){
+                freeEvent = 'FREE';
             }
-            s += "</ul>";
 
-            $events.html(s);
-        } else {
-                $loader.css('display','none');
-                alert("Sorry, there are no upcoming events matching your filters...");           
+            if (event.status.toLowerCase() === 'live'){
+                eventStatus = 'open';
+            } else {
+                eventStatus = event.status;
+            }
+
+            console.dir(event);
+            s += "<li><em><b><sup class=\'uppercase\'>"+eventStatus+"</sup></b></em> <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}) + ")</li>"; 
         }
+        s += "</ul>";
+
+        $events.html(s);
+
     });  
 
-    //Submit event filters to get relevant events from Eventbrite API
+    //Submit event filters to get updated events from Eventbrite API
     $(".submit_filters").submit(function(event){
-        $loader.css('display','block');
+        $loader.css('display','initial');
         let selectFilters = getSelectedFilters();
 
-
-        $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'sort_by=date', function(res) {
+        $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'include_all_series_instances=false&sort_by=date', function(res) {
+            console.log(res.events.length);
             if(res.events.length) {
                 let s = "<ul class='eventList'>";
        
@@ -157,22 +167,22 @@ $(document).ready(function() {
                     }
 
                     if (event.status.toLowerCase() === 'live'){
-                    eventStatus = 'open';
+                        eventStatus = 'open';
+                    } else {
+                        eventStatus = event.status;
                     }
 
                     console.dir(event);
-                    s += "<li><em><b><sup class=\'uppercase\''>"+eventStatus+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
+                    s += "<li><em><b><sup class=\'uppercase\'>"+eventStatus+"</sup></b></em> <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}) + ")</li>"; 
                 }
                 s += "</ul>";
 
-                $calendarSection.show();
-                $(".switch").show();
                 $events.html(s);
             } else {
                 $loader.css('display','none');
-                $calendarSection.hide();
-                $(".switch").hide();
                 alert("Sorry, there are no upcoming events matching your filters...");
+                location.reload();
+                
                 // $calendarSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
                 // $listSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
                 
@@ -190,18 +200,7 @@ $(document).ready(function() {
 
 });
 
-//Get the selected items from filter form
-function getSelectedFilters() {
 
-    let str = $(".submit_filters").serialize();
-    let selectFilters = '&';
-    selectFilters += str;
-    selectFilters +="&";     
-
-
-    return selectFilters;
-  
-};
 
 //gets events and returns an object with events organized by month
 //is zero based just like Date object's getMonth() method.

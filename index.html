@@ -43,6 +43,17 @@
                 <span class="slider round"></span>
             </label>
 
+            <section id= "listView" class="cal-eventList">
+
+                <h3>We find these tech events match your interests:</h3>
+                <div class="event-list-view">
+                
+	                <section id="events">
+	                <!-- call Eventbrite api to get a list of events by filters -->	
+	                </section>
+                </div>
+            </section>
+
             <section id= "calendar-view">
                 <div class="cal-nav">
                     <i class="material-icons cal-nav-back">navigate_before</i>
@@ -69,14 +80,6 @@
             </section>
 
 
-            <section id= "listView" class="cal-eventList">
-
-                <h3>We find these tech events match your interests:</h3>
-                <div class="event-list-view">
-                <!-- call Eventbrite api to get a list of events by filters -->
-                <section id="events"></section>
-                </div>
-            </section>
         </main>
         <aside id="filters">
             <!--only displays in small view so filters can toggle-->
@@ -101,11 +104,11 @@
 	                            <label for="filter-date-thisWeek">This Week</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="radio" id="filter-date-thisMonth" name="start_date.keyword" value="this_month" checked>
+	                            <input type="radio" id="filter-date-thisMonth" name="start_date.keyword" value="this_month">
 	                            <label for="filter-date-thisMonth">This Month</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="radio" id="filter-date-any" name="start_date.keyword" value="" >
+	                            <input type="radio" id="filter-date-any" name="start_date.keyword" value="" checked>
 	                            <label for="filter-date-any">In the Near Future</label>
 	                        </div>
 	                        <p> </p>
@@ -137,7 +140,7 @@
 	                            <label for="filter-tag-women">Women In Tech</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-tag-frontend" name="q" value="Web_Development" checked>
+	                            <input type="checkbox" id="filter-tag-frontend" name="q" value="Web_Development" >
 	                            <label for="filter-tag-frontend">Web Development</label>
 	                        </div>
 	                        <div class="filter-item">
