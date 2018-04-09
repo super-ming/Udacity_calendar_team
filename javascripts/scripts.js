@@ -149,9 +149,10 @@ $(document).ready(function() {
     let token = 'XRO476MORTABZO23QCXJ';
     let $events = $("#events");
     let $loader = $('.loader'); 
+    let tag_default = 'q=information--tech&';
 
     //Display events by default fitlers
-    let selectFilters_default = getSelectedFilters()+'q=information--tech&';
+    let selectFilters_default = getSelectedFilters()+tag_default;
     getEvents(token,selectFilters_default,$events,$loader);
 
 
@@ -159,11 +160,9 @@ $(document).ready(function() {
     $(".submit_filters").submit(function(event){
         $loader.css('display','initial');
 
-        let selectFilters = '';
-        if ($(".submit_filters input:checkbox:checked").length > 0){
-            selectFilters = getSelectedFilters();
-        } else {
-            selectFilters = selectFilters_default;
+        let selectFilters = getSelectedFilters();
+        if ($(".submit_filters input:checkbox:checked").length === 0){
+            selectFilters += tag_default;
         }
 
         getEvents(token, selectFilters, $events, $loader);
