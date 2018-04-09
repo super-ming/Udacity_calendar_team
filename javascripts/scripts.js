@@ -78,17 +78,11 @@ $('#filters').click(function(event) {
     }
 });
 
-//Get the selected items from filter form
-function getSelectedFilters() {
 
-    let str = $(".submit_filters").serialize();
-    let selectFilters = '&';
-    selectFilters += str;
-    selectFilters +="&";     
 
-    return selectFilters;
-  
-};
+/*
+Extraction events from EventBrite API -------------------------------------------------------------------------------------------------------------------
+*/
 
 //Connect to EventBrite API to get events
 function getEvents(token,sltFilters,$events,$loader) {
@@ -136,6 +130,19 @@ function getEvents(token,sltFilters,$events,$loader) {
 
 };
 
+
+//Get the selected items from filter form
+function getSelectedFilters() {
+
+    let str = $(".submit_filters").serialize();
+    let selectFilters = '&';
+    selectFilters += str;
+    selectFilters +="&";     
+
+    return selectFilters;
+  
+};
+
 //Display events
 $(document).ready(function() {
 
@@ -166,6 +173,11 @@ $(document).ready(function() {
     });
 
 });
+
+/*
+--------------------------------------------------------------------------------------------------------------------------------
+*/
+
 
 
 //gets events and returns an object with events organized by month
