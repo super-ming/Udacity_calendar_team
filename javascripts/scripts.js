@@ -1,9 +1,9 @@
 
 
-let neighborhoodFilter = $(".filter-title");
-neighborhoodFilter.click(function() {
-    $(this).next().toggle();
-});
+// let neighborhoodFilter = $(".filter-title");
+// neighborhoodFilter.click(function() {
+//     $(this).next().toggle();
+// });
 
 let $toggler = $("#toggleButton");
 
@@ -85,19 +85,15 @@ $(document).ready(function() {
     let $events = $("#events");
     let $listSection = $("#listView");
     let $calendarSection = $("#calendar-view");
-    let $loader = $('.loader');
-    // let $filterForm = $('#filters-type');
-    // let selectFilters = window.location.href.split('?')[1];
-    let filers='&q=';
+    let $loader = $('.loader'); 
+    
 
-
-
-    //Submit event filters to get relevant events from Eventbrite API
-    // $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+"&"+selectFilters+'&location.address=seattle&q=tech&sort_by=date', function(res) {
-    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+filers+'&location.address=seattle&start_date.keyword=&q=HTML_CSS&q=tech-new_in&sort_by=date', function(res) {
+    //Get events by default fitlers
+    let selectFilters = getSelectedFilters();
+    $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'sort_by=date', function(res) {
         if(res.events.length) {
             let s = "<ul class='eventList'>";
-            // alert (window.location.href.split('?')[1]);
+   
             //create an array of event by month
             //store those event in the local storage
             sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
@@ -126,11 +122,70 @@ $(document).ready(function() {
             $listSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
             
         }
+    });  
+
+    //Submit event filters to get relevant events from Eventbrite API
+    $(".submit_filters").submit(function(event){
+        $loader.css('display','block');
+        let selectFilters = getSelectedFilters();
+
+        $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'sort_by=date', function(res) {
+            if(res.events.length) {
+                let s = "<ul class='eventList'>";
+       
+                //create an array of event by month
+                //store those event in the local storage
+                sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
+                sessionStorage.setItem('briteEvents', JSON.stringify(res.events));
+                $loader.css('display','none');
+                createCalendar(date, $monthHeader, $calendarDaysGrid);
+
+                for(let i=0;i<res.events.length;i++) {
+                    let event = res.events[i];
+                    let eventStartDT = new Date(res.events[i].start.local);
+                    let eventEndDT = new Date(res.events[i].end.local);
+                    let freeEvent='';
+
+                    if (event.is_free){
+                        freeEvent = 'FREE';
+                    }
+
+                    console.dir(event);
+                    s += "<li><em><b><sup class=\'uppercase\''>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
+                }
+                s += "</ul>";
+                $events.html(s);
+            } else {
+                $loader.css('display','none');
+                $calendarSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
+                $listSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
+                
+            }
+        });  
+
+
+        event.preventDefault();
+
     });
 
+    // $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+"&"+selectFilters+'&location.address=seattle&q=tech&sort_by=date', function(res) {
+    
     
 
 });
+
+//Get the selected items from filter form
+function getSelectedFilters() {
+
+    let str = $(".submit_filters").serialize();
+    let selectFilters = '&';
+    selectFilters += str;
+    selectFilters +="&";     
+
+
+    return selectFilters;
+  
+};
 
 //gets events and returns an object with events organized by month
 //is zero based just like Date object's getMonth() method.

@@ -83,7 +83,7 @@
             <div class="small-view-filter"><span class="filter-link">filters</span></div>
             <div class="filter-container">
                 <!-- <h1>Event Filter</h1> -->
-                <form id="filters-type">
+                <form id="filters-type" class="submit_filters" method="post">
                 	<fieldset>
   					<legend>Event Filter </legend>
   						<p> </p>
@@ -97,33 +97,33 @@
 	                            <label for="filter-date-tomorrow">Tomorrow</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="radio" id="filter-date-thisWeek" name="start_date.keyword" value="this_week">
+	                            <input type="radio" id="filter-date-thisWeek" name="start_date.keyword" value="this_week" >
 	                            <label for="filter-date-thisWeek">This Week</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="radio" id="filter-date-thisMonth" name="start_date.keyword" value="this_month">
+	                            <input type="radio" id="filter-date-thisMonth" name="start_date.keyword" value="this_month" checked>
 	                            <label for="filter-date-thisMonth">This Month</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="radio" id="filter-date-any" name="start_date.keyword" value="" checked>
+	                            <input type="radio" id="filter-date-any" name="start_date.keyword" value="" >
 	                            <label for="filter-date-any">In the Near Future</label>
 	                        </div>
 	                        <p> </p>
 	                    <h4>By Neighborhood</h4>
 	                    	<div class="filter-item">
-	                            <input type="checkbox" id="filter-neighborhood-capitalhill" name="location.address" value="Capitol_Hill-Seattle">
+	                            <input type="radio" id="filter-neighborhood-capitalhill" name="location.address" value="Capitol_Hill-Seattle">
 	                            <label for="filter-neighborhood-capitalhill">Capitol Hill</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-neighborhood-downtown" name="location.address" value="Downtown-Seattle">
+	                            <input type="radio" id="filter-neighborhood-downtown" name="location.address" value="Downtown-Seattle">
 	                            <label for="filter-neighborhood-downtown">Downtown</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-neighborhood-belltown" name="location.address" value="Belltown-Seattle">
+	                            <input type="radio" id="filter-neighborhood-belltown" name="location.address" value="Belltown-Seattle">
 	                            <label for="filter-neighborhood-belltown">Belltown</label>
 	                        </div>
 	                        <div class="filter-item">
-	                            <input type="checkbox" id="filter-neighborhood-seattle" name="location.address" value="Seattle" checked>
+	                            <input type="radio" id="filter-neighborhood-seattle" name="location.address" value="Seattle" checked>
 	                            <label for="filter-neighborhood-seattle">Great Seattle Area</label>
 	                        </div>
 	                        <p> </p>
@@ -163,7 +163,7 @@
 <!-- 						      <button type="submit" value="submit">
 						      	Submit
 						      </button> -->
-						      <input type = "button", value="Submit", id="submitButton">
+						      <input type = "submit", value="Submit">
 						    </div>
 					</fieldset>
                 </form>

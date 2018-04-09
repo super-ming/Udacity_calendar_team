@@ -1027,7 +1027,7 @@ textarea {
     margin-bottom: 15px;
 }
 
-input[type=button] {
+input[type=submit] {
      font-family: 'Mina', sans-serif; 
      font-size: 15px;
 
