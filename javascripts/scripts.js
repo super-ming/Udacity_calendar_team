@@ -115,7 +115,7 @@ function getEvents(token,sltFilters,$events,$loader) {
                 }
 
                 console.dir(event);
-                s += "<li><em><b><sup class=\'uppercase\'>"+eventStatus+"</sup></b></em> <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}) + ")</li>"; 
+                s += "<li><em><b><sup class=\'uppercase\'>"+eventStatus+"</sup></b></em> <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-style\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}) + ")</li>";
             }
             s += "</ul>";
 

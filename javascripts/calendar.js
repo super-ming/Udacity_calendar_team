@@ -148,7 +148,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                 let isFree = event.is_free? 'FREE':'';
                 let eventNameLong = '<em><b><span class="uppercase">' + eventStatus +
                                     '</span></b></em> <a href="' + event.url + '" target = "_blank" >' + event.name.text +
-                                    '</a> <em><span id="free-sytle">' + isFree + '</span></em>';
+                                    '</a> <em><span id="free-style">' + isFree + '</span></em>';
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
