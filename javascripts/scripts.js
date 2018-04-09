@@ -103,16 +103,22 @@ $(document).ready(function() {
 
             for(let i=0;i<res.events.length;i++) {
                 let event = res.events[i];
-                let eventStartDT = new Date(res.events[i].start.local);
-                let eventEndDT = new Date(res.events[i].end.local);
+
+                let eventStartDT = new Date(event.start.local);
+                let eventEndDT = new Date(event.end.local);
+                let eventStatus = event.status;
                 let freeEvent='';
 
                 if (event.is_free){
                     freeEvent = 'FREE';
                 }
 
+                if (event.status.toLowerCase() === 'live'){
+                    eventStatus = 'open';
+                }
+
                 console.dir(event);
-                s += "<li><em><b><sup class=\'uppercase\''>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
+                s += "<li><em><b><sup class=\'uppercase\''>"+eventStatus+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
             }
             s += "</ul>";
             $events.html(s);
@@ -149,9 +155,13 @@ $(document).ready(function() {
                     if (event.is_free){
                         freeEvent = 'FREE';
                     }
+                    
+                    if (event.status.toLowerCase() === 'live'){
+                    eventStatus = 'open';
+                    }
 
                     console.dir(event);
-                    s += "<li><em><b><sup class=\'uppercase\''>"+event.status+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
+                    s += "<li><em><b><sup class=\'uppercase\''>"+eventStatus+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
                 }
                 s += "</ul>";
                 $events.html(s);
