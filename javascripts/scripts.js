@@ -121,11 +121,16 @@ $(document).ready(function() {
                 s += "<li><em><b><sup class=\'uppercase\''>"+eventStatus+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
             }
             s += "</ul>";
+
+            $calendarSection.show();
+            $(".switch").show();
             $events.html(s);
+
         } else {
-            $loader.css('display','none');
-            $calendarSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
-            $listSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
+                $loader.css('display','none');
+                $calendarSection.hide();
+                $(".switch").hide();
+                alert("Sorry, there are no upcoming events matching your filters...");
             
         }
     });  
@@ -135,7 +140,9 @@ $(document).ready(function() {
         $loader.css('display','block');
         let selectFilters = getSelectedFilters();
 
+
         $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'sort_by=date', function(res) {
+            console.log(res.events.length);
             if(res.events.length) {
                 let s = "<ul class='eventList'>";
        
@@ -155,7 +162,7 @@ $(document).ready(function() {
                     if (event.is_free){
                         freeEvent = 'FREE';
                     }
-                    
+
                     if (event.status.toLowerCase() === 'live'){
                     eventStatus = 'open';
                     }
@@ -164,11 +171,17 @@ $(document).ready(function() {
                     s += "<li><em><b><sup class=\'uppercase\''>"+eventStatus+"</sup></b></em>  <a id=\'event-name\'' href='" + event.url + "' target = \'_blank \' >" + event.name.text + "</a> <em><sup id=\'free-sytle\'>"+freeEvent+"</sup></em> ("+eventStartDT.toLocaleDateString()+", "+eventStartDT.toLocaleTimeString()+" ~ "+eventEndDT.toLocaleDateString()+", "+ eventEndDT.toLocaleTimeString() + ")</li>"; 
                 }
                 s += "</ul>";
+
+                $calendarSection.show();
+                $(".switch").show();
                 $events.html(s);
             } else {
                 $loader.css('display','none');
-                $calendarSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
-                $listSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
+                $calendarSection.hide();
+                $(".switch").hide();
+                alert("Sorry, there are no upcoming events matching your filters...");
+                // $calendarSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
+                // $listSection.html("<h1>Sorry, there are no upcoming events matching your filters...</h1>");
                 
             }
         });  
