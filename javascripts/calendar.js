@@ -150,7 +150,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                                         .append(event.name.text.substring(0,40).concat()),
                                     $('<div class="event-time">').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})),
                                     $('<div class="event-name-long">')
-                                        .append('<a href="' + currDayEventData.map(function(event){return event.url}) + '" target = \'_blank \' >' + event.name.text + '</a>')
+                                        .append('<a href="' + event.url + '" target = \'_blank \' >' + event.name.text + '</a>')
                                 );
             }));
 
