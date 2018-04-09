@@ -276,7 +276,7 @@ b {
     #navigation ul li::after,
     #navigation ul li:last-child::after,
     .filter-link::after  {
-        content: '\203A';
+        content: '\203A'; /*chevron*/
         padding: 0 10px;
         font-size: 1.25em;
 
@@ -637,16 +637,33 @@ input:checked + .slider:after {
     cursor: pointer;
 }
 
+.modal-content ul {
+    margin: 1em;
+}
+
+.modal-content li {
+    display: flex;
+    flex-flow: row;
+    font-size: 12px;
+    margin: .75em auto;
+}
+
+.modal-content li:not(:last-child)::after {
+    content: none;
+}
+
 .modal-content .event-name-short {
     display: none;
 }
 
 .modal-content .event-time {
-    display: block;
+    display: inline-block;
+    flex: 0 0 20%;
 }
 
 .modal-content .event-name-long {
-    display: block;
+    display: inline-block;
+    flex: 0 1 auto;
 }
 
 /* displays with animation until API data loads */

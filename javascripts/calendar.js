@@ -144,13 +144,18 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
             }));
             let eventDetails = $('<ul>').append(currDayEventData.map(function(event){
                 let time = new Date(event.start.local);
+                let eventStatus = event.status.toLowerCase() === 'live'? 'open': event.status;
+                let isFree = event.is_free? 'FREE':'';
+                let eventNameLong = '<em><b><span class="uppercase">' + eventStatus +
+                                    '</span></b></em> <a href="' + event.url + '" target = "_blank" >' + event.name.text +
+                                    '</a> <em><span id="free-sytle">' + isFree + '</span></em>';
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
                                         .append(event.name.text.substring(0,40).concat()),
                                     $('<div class="event-time">').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})),
                                     $('<div class="event-name-long">')
-                                        .append('<a href="' + event.url + '" target = \'_blank \' >' + event.name.text + '</a>')
+                                        .append(eventNameLong)
                                 );
             }));
 
