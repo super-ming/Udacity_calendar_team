@@ -122,16 +122,10 @@ $(document).ready(function() {
             }
             s += "</ul>";
 
-            $calendarSection.show();
-            $(".switch").show();
             $events.html(s);
-
         } else {
                 $loader.css('display','none');
-                $calendarSection.hide();
-                $(".switch").hide();
-                alert("Sorry, there are no upcoming events matching your filters...");
-            
+                alert("Sorry, there are no upcoming events matching your filters...");           
         }
     });  
 
@@ -142,7 +136,6 @@ $(document).ready(function() {
 
 
         $.get('https://www.eventbriteapi.com/v3/events/search/?token='+token+selectFilters+'sort_by=date', function(res) {
-            console.log(res.events.length);
             if(res.events.length) {
                 let s = "<ul class='eventList'>";
        
