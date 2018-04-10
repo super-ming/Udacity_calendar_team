@@ -170,7 +170,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
             if(currDayEventData.length > 1) {
                 eventCountDisplay += '<div class="event-display-count-container">' +
                     '<div class="event-display-count">' +
-                    + currDayEventData.length  + ' more event';
+                    + (currDayEventData.length-1)  + ' more event';
 
                 eventCountDisplay += currDayEventData.length > 1 && 's';
                 eventCountDisplay += '<i class="material-icons">expand_more</i></div>';
