@@ -585,7 +585,7 @@ input:checked + .slider:after {
     display: table;
     color: #04040440;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0), white,white);
+    background: linear-gradient(to bottom, rgba(255,255,255,0), white,white);
     height: 2.3em;
     width: 100%;
 }
@@ -1315,7 +1315,7 @@ input:checked + .slider:after {
     display: table;
     color: #04040440;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0), white,white);
+    background: linear-gradient(to bottom, rgba(255,255,255,0), white,white);
     height: 2.3em;
     width: 100%;
 }
