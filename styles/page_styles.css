@@ -1444,6 +1444,7 @@ input:checked + .slider:after {
     top: 20%;
     left: 0;
     right: 0;
+    z-index: 5;
 }
 
 /* Safari */
