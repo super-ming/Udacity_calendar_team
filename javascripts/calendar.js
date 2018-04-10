@@ -137,29 +137,46 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
             //get the name of each event (max 40 chars), append them to an li
             //these will be displayed in calendar view
 
+            let eventCountDisplay = '';
+
             currDayEventData.sort((function (a, b) {
                 let aDate = new Date(a.start.local);
                 let bDate = new Date(b.start.local);
                 return aDate - bDate;
             }));
+
+           // let image = document.createElement('img');
+           // image.src = currDayEventData.length > 0 ? currDayEventData[0].logo.url : '';
+
             let eventDetails = $('<ul>').append(currDayEventData.map(function(event){
                 let time = new Date(event.start.local);
                 let eventStatus = event.status.toLowerCase() === 'live'? 'open': event.status;
                 let isFree = event.is_free? 'FREE':'';
+                let shortEventStr = currDayEventData.length > 1? event.name.text.substring(0,40).concat('...'): event.name.text;
                 let eventNameLong = '<em><b><span class="uppercase">' + eventStatus +
                                     '</span></b></em> <a href="' + event.url + '" target = "_blank" >' + event.name.text +
                                     '</a> <em><span id="free-style">' + isFree + '</span></em>';
                 return $('<li>').attr('data-event-id', event.id)
                                 .append(
                                     $('<div class="event-name-short">')
-                                        .append(event.name.text.substring(0,40).concat()),
+                                        .append(shortEventStr),
                                     $('<div class="event-time">').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})),
                                     $('<div class="event-name-long">')
                                         .append(eventNameLong)
                                 );
-            }));
+                })
+            );
 
-            return $('<div class="event-details">').append(eventDetails);
+            if(currDayEventData.length > 1) {
+                eventCountDisplay += '<div class="event-display-count-container">' +
+                    '<div class="event-display-count">' +
+                    + currDayEventData.length  + ' more event';
+
+                eventCountDisplay += currDayEventData.length > 1 && 's';
+                eventCountDisplay += '<i class="material-icons">expand_more</i></div>';
+            }
+
+            return $('<div class="event-details">').append(/*image,*/ eventDetails, eventCountDisplay);
         }
     };
 }

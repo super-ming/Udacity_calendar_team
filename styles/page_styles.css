@@ -503,6 +503,7 @@ input:checked + .slider:after {
 }
 
 #calendar-view time {
+    position: relative;
     height: 108px;
     border-radius: 2.5%;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
@@ -565,25 +566,51 @@ input:checked + .slider:after {
 }
 
 .event-details {
-    margin: auto 5px;
+    overflow: hidden;
 }
 
 .event-details ul {
     padding: 0;
+    margin: .5em;
 }
 
 .event-details li {
     font-size: 10px;
     list-style-type: none;
-    line-height: 1.4em;
+    line-height: 1.3em;
 }
 
+.event-display-count-container {
+    position: absolute;
+    display: table;
+    color: #04040440;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), white,white);
+    height: 2.3em;
+    width: 100%;
+}
+
+.event-display-count {
+    text-align: right;
+    margin: auto;
+    display: table-cell;
+    vertical-align: bottom;
+    font-size: 10px;
+}
+
+.event-display-count .material-icons {
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+
+/*changing to using # of events, keeping incase this changes*/
 .event-details li:not(:last-child)::after {
     content: "";
-    border-bottom: solid 1px lightgray;;
+    border-bottom: solid 1px lightgray;
     display: block;
-    width: 85%;
-    margin: .5em auto;
+    width: 95%;
+    margin: .3em auto;
 }
 
 .event-time {
@@ -648,10 +675,12 @@ input:checked + .slider:after {
     margin: .75em auto;
 }
 
+/*removed events in cal view, keeping incase this changes*/
 .modal-content li:not(:last-child)::after {
     content: none;
 }
 
+/*removed to have num of events in cal view instead.  keeping incase this changes*/
 .modal-content .event-name-short {
     display: none;
 }
@@ -664,6 +693,10 @@ input:checked + .slider:after {
 .modal-content .event-name-long {
     display: inline-block;
     flex: 0 1 auto;
+}
+
+.modal-content .event-display-count-container {
+    display: none;
 }
 
 /* displays with animation until API data loads */
