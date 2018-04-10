@@ -768,7 +768,7 @@ input:checked + .slider:after {
 
 #about-us {
   background-color: #d3d3d3;
-  rbga: (211, 211, 211, .8);
+  background-color: rbga(211, 211, 211, 0.8);
   border-radius: .57em;
   grid-area: us;
   margin-bottom: 2%;
@@ -778,7 +778,7 @@ input:checked + .slider:after {
 
 #about-team {
   background-color: #c0c0c0;
-  rbga: (192, 192, 192, .8);
+  background-color: rbga(192, 192, 192, 0.8);
   border-radius: .57em;
   grid-area: team;
 }
@@ -787,7 +787,7 @@ input:checked + .slider:after {
   grid-area: contact;
   border-radius: .57em;
   background-color: #cfcfcf;
-  background-color: (207, 207, 207, .8);
+  background-color: rgba(207, 207, 207, 0.8);
   padding: 1em;
 }
 
