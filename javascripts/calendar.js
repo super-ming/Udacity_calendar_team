@@ -145,9 +145,6 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                 return aDate - bDate;
             }));
 
-           // let image = document.createElement('img');
-           // image.src = currDayEventData.length > 0 ? currDayEventData[0].logo.url : '';
-
             let eventDetails = $('<ul>').append(currDayEventData.map(function(event){
                 let time = new Date(event.start.local);
                 let eventStatus = event.status.toLowerCase() === 'live'? 'open': event.status;
@@ -176,7 +173,7 @@ function createCalendar(date, $headerDOM, $calendarGridDOM) {
                 eventCountDisplay += '<i class="material-icons">expand_more</i></div>';
             }
 
-            return $('<div class="event-details">').append(/*image,*/ eventDetails, eventCountDisplay);
+            return $('<div class="event-details">').append(eventDetails, eventCountDisplay);
         }
     };
 }
