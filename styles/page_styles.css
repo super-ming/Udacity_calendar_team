@@ -571,7 +571,7 @@ input:checked + .slider:after {
 
 .event-details ul {
     padding: 0;
-    margin: .5em;
+    margin: .4em;
 }
 
 .event-details li {
