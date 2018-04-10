@@ -76,6 +76,7 @@ header {
 main {
     grid-area: main;
     position: relative;
+    min-height: 360px;
 }
 
 aside {
@@ -835,6 +836,7 @@ header {
 main {
     grid-area: main;
     position: relative;
+    min-height: 360px;
 }
 
 aside {
@@ -1499,7 +1501,8 @@ input:checked + .slider:after {
     position: absolute;
     /*position: static;*/
     margin: auto;
-    top: 20%;
+    top: 50%;
+    transform: translate(0, -50%);
     left: 0;
     right: 0;
     z-index: 5;
