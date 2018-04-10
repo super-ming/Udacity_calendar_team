@@ -526,7 +526,7 @@ input:checked + .slider:after {
 #calendar-view time {
     position: relative;
     height: 108px;
-    border-radius: 2.5%;
+    border-radius: .25em;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform .2s;
@@ -660,13 +660,12 @@ input:checked + .slider:after {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    border-radius: 2.5%;
+    border-radius: .4em;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     background-color: white;
     width: 25vw;
     min-height: 250px;
-    max-height: 90vh;
-    height: 100%; /*need to make scroll work*/
+    height: 60%; /*need to make scroll work*/
 }
 
 .modal-content .date-num {
@@ -1286,7 +1285,7 @@ input:checked + .slider:after {
 #calendar-view time {
     position: relative;
     height: 108px;
-    border-radius: 2.5%;
+    border-radius: .25em;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform .2s;
@@ -1420,13 +1419,12 @@ input:checked + .slider:after {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    border-radius: 2.5%;
+    border-radius: .4em;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     background-color: white;
     width: 25vw;
     min-height: 250px;
-    max-height: 90vh;
-    height: 100%; /*need to make scroll work*/
+    height: 60%; /*need to make scroll work*/
 }
 
 .modal-content .date-num {
