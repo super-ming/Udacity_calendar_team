@@ -25,7 +25,7 @@ $(document).ready(function(){
       } else if (thisRow === 'roster-row-2') {
       $(this).css({'transform' : 'rotate(12deg)'});
       } else if (thisRow === 'roster-row-3') {
-      $(this).css({'transform' : 'rotate(342deg)'});
+      $(this).css({'transform' : 'rotate(331deg)'});
       };
     }
   });
