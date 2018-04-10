@@ -242,7 +242,7 @@ b {
     .small-nav-open-icon .material-icons {
         display: inline-block;
         margin-right: 2px;
-        vertical-align: bottom;
+        vertical-align: middle;
         font-size: 30px;
     }
 
@@ -1002,7 +1002,7 @@ b {
     .small-nav-open-icon .material-icons {
         display: inline-block;
         margin-right: 2px;
-        vertical-align: bottom;
+        vertical-align: middle;
         font-size: 30px;
     }
 
