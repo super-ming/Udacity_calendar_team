@@ -1,11 +1,11 @@
 $(document).ready(function(){
   
-  let yukaMullenModal = $('#Yuka-Mullen-modal');
   let jinjinGeModal = $('#Jinjin-Ge-modal');
-  let alexTranModal = $('#Alex-Tran-modal');
+  let yukaMullenModal = $('#Yuka-Mullen-modal');
   let jacobOlsonModal = $('#Jacob-Olson-modal');
+  let alexTranModal = $('#Alex-Tran-modal');
   
-  // let person = $('name').text();
+  let person;
 
   $('.profile').on('click', function () {
     let person = $(this).find('.name').text();
