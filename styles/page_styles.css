@@ -1458,9 +1458,16 @@ input:checked + .slider:after {
 }
 
 /*About Page*/
-.modal-content .about-modal-content {
-  min-height: auto;
+.about-modal-content {
+    position: relative;
+    margin: 15% auto;
+    overflow: auto;
+    border-radius: 2.5%;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 50vw;
 }
+
 
 .modal .bio {
   margin: 2em;
@@ -1519,6 +1526,10 @@ input:checked + .slider:after {
                         "  team   " 
                         " contact ";
   margin: 2% 5%;
+  }
+
+  .about-modal-content {
+  width: 70vw;
   }
 }
 
@@ -1680,6 +1691,7 @@ form {
   font-family: 'Work Sans';
   font-size: 90%;
 }
+
 
 
 /* Sign up page */
