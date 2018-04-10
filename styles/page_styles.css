@@ -665,7 +665,7 @@ input:checked + .slider:after {
     background-color: white;
     width: 25vw;
     min-height: 250px;
-    height: 60%; /*need to make scroll work*/
+    height: 40%; /*need to make scroll work*/
 }
 
 .modal-content .date-num {
@@ -1424,7 +1424,7 @@ input:checked + .slider:after {
     background-color: white;
     width: 25vw;
     min-height: 250px;
-    height: 60%; /*need to make scroll work*/
+    height: 40%; /*need to make scroll work*/
 }
 
 .modal-content .date-num {
