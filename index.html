@@ -17,7 +17,11 @@
 			        <a href="index.html" target="_top">What is the next tech event in Seattle?</a>
 			    </div>
 			    <nav role="navigation" class="global-nav">
-                    <i class="material-icons small-nav-open-icon">dehaze</i>
+                    <div class="small-nav-open-icon">
+                        <i class="material-icons">dehaze</i>
+                        Menu
+                    </div>
+
                     <div id="navigation">
                         <i class="material-icons small-nav-close-icon">clear</i>
                         <ul>
@@ -83,7 +87,9 @@
         </main>
         <aside id="filters">
             <!--only displays in small view so filters can toggle-->
-            <div class="small-view-filter"><span class="filter-link">filters</span></div>
+            <div class="small-view-filter">
+                <span class="filter-link">Add Filters<i class="material-icons">expand_more</i></span>
+            </div>
             <div class="filter-container">
                 <!-- <h1>Event Filter</h1> -->
                 <form id="filters-type" class="submit_filters" method="post">

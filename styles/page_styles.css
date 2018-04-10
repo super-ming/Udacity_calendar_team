@@ -216,7 +216,7 @@ b {
     z-axis: 90; */
 }
 
-.material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon,
+.small-nav-open-icon, .material-icons.small-nav-close-icon,
 .small-view-filter {
     display: none;
 }
@@ -228,10 +228,21 @@ b {
                              'main main '
                              'footer footer';
     }
-    .material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon {
-        display: block;
+    .small-nav-open-icon, .material-icons.small-nav-close-icon {
+        display: inline-block;
         cursor: pointer;
-        margin-right: 25px;
+    }
+
+    .small-nav-open-icon {
+        font-size: 20px;
+        line-height: 1.5em;
+    }
+
+    .small-nav-open-icon .material-icons {
+        display: inline-block;
+        margin-right: 2px;
+        vertical-align: bottom;
+        font-size: 30px;
     }
 
     .small-nav-close-icon {
@@ -274,8 +285,7 @@ b {
         line-height: 1.5em;
     }
     #navigation ul li::after,
-    #navigation ul li:last-child::after,
-    .filter-link::after  {
+    #navigation ul li:last-child::after {
         content: '\203A'; /*chevron*/
         padding: 0 10px;
         font-size: 1.25em;
@@ -286,6 +296,17 @@ b {
         display: block;
         text-align: right;
         cursor: pointer;
+    }
+
+    .small-view-filter .material-icons {
+        vertical-align: middle;
+    }
+
+    .small-view-filter .filter-link {
+        background-color: rgb(42,56,64);
+        display: inline-block;
+        padding: .3em .4em;
+        color: white;
     }
 
     .filter-container {
@@ -946,7 +967,7 @@ b {
     z-axis: 90; */
 }
 
-.material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon,
+.small-nav-open-icon, .material-icons.small-nav-close-icon,
 .small-view-filter {
     display: none;
 }
@@ -958,10 +979,21 @@ b {
                              'main main '
                              'footer footer';
     }
-    .material-icons.small-nav-open-icon, .material-icons.small-nav-close-icon {
-        display: block;
+    .small-nav-open-icon, .material-icons.small-nav-close-icon {
+        display: inline-block;
         cursor: pointer;
-        margin-right: 25px;
+    }
+
+    .small-nav-open-icon {
+        font-size: 20px;
+        line-height: 1.5em;
+    }
+
+    .small-nav-open-icon .material-icons {
+        display: inline-block;
+        margin-right: 2px;
+        vertical-align: bottom;
+        font-size: 30px;
     }
 
     .small-nav-close-icon {
@@ -1004,8 +1036,7 @@ b {
         line-height: 1.5em;
     }
     #navigation ul li::after,
-    #navigation ul li:last-child::after,
-    .filter-link::after  {
+    #navigation ul li:last-child::after {
         content: '\203A'; /*chevron*/
         padding: 0 10px;
         font-size: 1.25em;
@@ -1016,6 +1047,17 @@ b {
         display: block;
         text-align: right;
         cursor: pointer;
+    }
+
+    .small-view-filter .material-icons {
+        vertical-align: middle;
+    }
+
+    .small-view-filter .filter-link {
+        background-color: rgb(42,56,64);
+        display: inline-block;
+        padding: .3em .4em;
+        color: white;
     }
 
     .filter-container {
