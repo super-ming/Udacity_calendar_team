@@ -690,7 +690,7 @@ input:checked + .slider:after {
 
 .modal-content .event-details {
     overflow: auto;
-    height: 100%;
+    height: 80%;
 }
 
 .modal-content ul {
@@ -1449,7 +1449,7 @@ input:checked + .slider:after {
 
 .modal-content .event-details {
     overflow: auto;
-    height: 100%;
+    height: 80%;
 }
 
 .modal-content ul {
