@@ -26,16 +26,6 @@ function toggleView(){
 
 };
 
-//if screen is smaller than 992px wide then remove style attr
-//added by the toggle so that only the list view displayed
-//in all non-desktop views
-$( window ).resize(function() {
-    if($(window).width() < 992) {
-        $('#calendar-view').removeAttr('style');
-        $('#listView').removeAttr('style');
-    }
-});
-
 //Vanilla javascript version
 /*document.getElementById('toggleButton').addEventListener('click', function () {
     toggleView();
