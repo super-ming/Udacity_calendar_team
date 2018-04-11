@@ -1,5 +1,7 @@
 $(document).ready(function(){
-
+  
+  
+  
   let person;
   let thisRow;
 
@@ -18,20 +20,15 @@ $(document).ready(function(){
     } else if (person === 'Alex Tran') {
     $('#Alex-Tran-modal').css('display', 'block');
     } else {
-      if (this.hasAttribute('style')) {
-      $(this).removeAttr('style');
-      } else {
-        let thisRow = $(this).parent().attr('id');
-        if (thisRow === 'roster-row-1') {
-        $(this).css({'transform' : 'rotate(350deg)'});
-        return $(this);
-        } else if (thisRow === 'roster-row-2') {
-        $(this).css({'transform' : 'rotate(12deg)'});
-        } else if (thisRow === 'roster-row-3') {
-        $(this).css({'transform' : 'rotate(331deg)'});
-        };
+    let thisRow = $(this).parent().attr('id');
+      if (thisRow === 'roster-row-1') {
+      $(this).css({'transform' : 'rotate(350deg)'});
+      } else if (thisRow === 'roster-row-2') {
+      $(this).css({'transform' : 'rotate(12deg)'});
+      } else if (thisRow === 'roster-row-3') {
+      $(this).css({'transform' : 'rotate(331deg)'});
       };
-   };
+    };
   });
 
   $('.about-close').on('click', function () {
