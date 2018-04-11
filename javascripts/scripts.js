@@ -168,13 +168,6 @@ function briteEventByMonthObject(events) {
     return byMonth;
 }
 
-if(location.search) {
-    let searchStr=location.search;
-    searchStr = searchStr.substring(0,searchStr.lastIndexOf('/'));
-    searchStr = searchStr.concat('/index.html');
-    console.log(searchStr);
-}
-
 $send.click(function(e){
     e.preventDefault();
     let id = $(this).closest(".submit-container").find(".success-modal").attr("id");
