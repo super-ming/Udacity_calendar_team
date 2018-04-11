@@ -182,7 +182,13 @@ $send.click(function(e){
             alert("Your event has been added!");
             break;
     }
-   // $(location).attr('href','./index.html');
-    location.href = './index.html';
+    if(location.search) {
+        let searchStr=location.search;
+        searchStr.substring(0,searchStr.lastIndexOf('/'));
+        searchStr.concat('./index.html');
 
+        location.search = searchStr;
+    } else {
+        $(location).attr('href','./index.html');
+    }
 });
