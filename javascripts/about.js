@@ -7,6 +7,8 @@ $(document).ready(function(){
     let person = $(this).find('.name').text();
     if (person === 'Jinjin Ge') {
     $('#Jinjin-Ge-modal').css('display', 'block');
+    } else if (person === 'Robert Grunau') {
+    $('#Robert-Grunau-modal').css('display', 'block');
     } else if (person === 'Ming Ho') {
     $('#Ming-Ho-modal').css('display', 'block');
     } else if (person === 'Yuka Mullen') {
