@@ -1,11 +1,15 @@
 $(document).ready(function(){
-    
+  
+  
+  
   let person;
   let thisRow;
 
   $('.profile').on('click', function () {
     let person = $(this).find('.name').text();
-    if (person === 'Jinjin Ge') {
+    if (person === 'Jacki Bostow') {
+    ;
+    } else if (person === 'Jinjin Ge') {
     $('#Jinjin-Ge-modal').css('display', 'block');
     } else if (person === 'Robert Grunau') {
     $('#Robert-Grunau-modal').css('display', 'block');
