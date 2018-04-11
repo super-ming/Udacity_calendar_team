@@ -171,7 +171,7 @@ function briteEventByMonthObject(events) {
 if(location.search) {
     let searchStr=location.search;
     searchStr = searchStr.substring(0,searchStr.lastIndexOf('/'));
-    searchStr.concat('/index.html');
+    searchStr = searchStr.concat('/index.html');
     console.log(searchStr);
 }
 
@@ -192,7 +192,7 @@ $send.click(function(e){
     if(location.search) {
         let searchStr=location.search;
         searchStr = searchStr.substring(0,searchStr.lastIndexOf('/'));
-        searchStr.concat('/index.html');
+        searchStr = searchStr.concat('/index.html');
         location.search = searchStr;
     } else {
         $(location).attr('href','./index.html');
