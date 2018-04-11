@@ -170,7 +170,7 @@ function briteEventByMonthObject(events) {
 
 $send.click(function(e){
     e.preventDefault();
-    let id = $(this).closest(".submit-container").find(".success-modal").attr("id");
+    let id = $(".success-modal").attr("id");
     switch(id) {
         case 'signupSuccess':
             alert("Thanks for signing up!");
@@ -182,5 +182,5 @@ $send.click(function(e){
             alert("Your event has been added!");
             break;
     }
-    $(location).attr('href','./index.html');
+    window.location.assign("https://htmlpreview.github.io/?https://github.com/RJGrunau/Udacity_calendar_team/blob/master/index.html");
 });
