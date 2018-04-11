@@ -1533,7 +1533,7 @@ input:checked + .slider:after {
 
 .modal .bio {
   margin: 2em;
-  }
+}
 
 .modal .about-close {
   position: absolute;
