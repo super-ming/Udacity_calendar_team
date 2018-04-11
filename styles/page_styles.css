@@ -943,7 +943,7 @@ a:link {
   font-size: 130%;
 }
 
-#profile-image {
+.profile-image {
   border: .1em solid;
   border-color: rgba(222, 236, 244, .6);
   border-radius: 50%;
@@ -954,7 +954,7 @@ a:link {
 
 }
 
-#profile-image:hover {
+.profile-image:hover {
   transform: scale(1.11);
 }
 
