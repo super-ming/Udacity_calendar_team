@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  
+
   let person;
   let thisRow;
 
@@ -33,7 +33,6 @@ $(document).ready(function(){
         };
    };
   });
-
 
   $('.about-close').on('click', function () {
     $('.modal').css('display', 'none');
