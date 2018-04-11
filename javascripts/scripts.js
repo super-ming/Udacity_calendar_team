@@ -186,7 +186,7 @@ $send.click(function(e){
         let searchStr=location.search;
         searchStr.substring(0,searchStr.lastIndexOf('/'));
         searchStr.concat('./index.html');
-
+        console.log(searchStr);
         location.search = searchStr;
     } else {
         $(location).attr('href','./index.html');
