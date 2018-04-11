@@ -184,9 +184,8 @@ $send.click(function(e){
     }
     if(location.search) {
         let searchStr=location.search;
-        searchStr.substring(0,searchStr.lastIndexOf('/'));
-        searchStr.concat('./index.html');
-        console.log(searchStr);
+        searchStr = searchStr.substring(0,searchStr.lastIndexOf('/'));
+        searchStr.concat('/index.html');
         location.search = searchStr;
     } else {
         $(location).attr('href','./index.html');
