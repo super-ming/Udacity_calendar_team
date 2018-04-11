@@ -20,6 +20,7 @@ $(document).ready(function(){
     } else {
         if (this.hasAttribute('style')) {
         $(this).removeAttr('style');
+        return $(this);
         } else {
         let thisRow = $(this).parent().attr('id');
           if (thisRow === 'roster-row-1') {
