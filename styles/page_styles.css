@@ -1019,14 +1019,14 @@ form {
     padding: 26px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    font-family: 'Mina', sans-serif;
-    color: #2A3840;
 }
 
 .submit-container {
     display: flex;
     flex-flow: column nowrap;
     padding: 10px;
+    font-family: 'Mina', sans-serif;
+    color: #2A3840;
 }
 
 .submit-container > input, .event_time > input {
@@ -1084,7 +1084,7 @@ input[name="event-details"]{
 }
 
 .addeventbtn {
-    background-color: #8FBEDB;
+    background-color: #20DEDCFF;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -1120,11 +1120,12 @@ input[type=submit] {
 }
 
 /* Sign up page */
-
-=======
-/* Sign up page */
-
->>>>>>> upstream/master
+.submit-form {
+    border:1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Mina', sans-serif;
+    color: #2A3840;
+}
 /*using same wrapper for sign up, login, submission page*/
 .submit-wrapper {
     display: grid;
@@ -1153,6 +1154,7 @@ input[type=submit] {
     display: flex;
     flex-flow: column nowrap;
     padding: 10px;
+    background-color: rgba(207, 207, 207, 0.8);
 }
 
 .submit-container > input, .event_time > input {
@@ -1210,7 +1212,7 @@ input[name="event-details"]{
 }
 
 .addeventbtn {
-    background-color: #8FBEDB;
+    background-color: #20DEDCFF;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
