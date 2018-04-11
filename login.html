@@ -35,9 +35,11 @@
         </header>
 
         <main class='submit-main'>
-            <form action="action_page.php" style="border:1px solid #ccc">
+            <form action="action_page.php" class="submit-form">
               <div class="submit-container">
+                <div id="login-title" class="signup-title">
                 <h1>Log In</h1>
+                </div>
                 <hr>
 
                 <label for="email"><b>Email</b></label>
@@ -50,12 +52,13 @@
                   <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
                 </label>
 
-            <div class="clearfix">
-                <button type="button" class="loginbtn">Log In</button>
-                <button type="submit" class="cancelbtn">Cancel</button>
+            <div id="loginSuccess" class="success-modal">
+                <button type="submit" class="loginbtn">Log In</button>
+                <button type="button" class="cancelbtn">Cancel</button>
             </div>
+
             </div>
-          </form>
+            </form>
         </main>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

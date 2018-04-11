@@ -6,6 +6,7 @@
 // });
 
 let $toggler = $("#toggleButton");
+let $send = $("button[type='submit']");
 
 //Add event listener for click to toggle either calendar or list view
 $toggler.click(function(){
@@ -25,23 +26,6 @@ function toggleView(){
 
 
 };
-
-//Vanilla javascript version
-/*document.getElementById('toggleButton').addEventListener('click', function () {
-    toggleView();
-});
-
-function toggleView(){
-    let calView = document.getElementById("calendarView");
-    let listView = document.getElementById("listView");
-    if (calView.style.display === "none") {
-        calView.style.display = "inline-block";
-        listView.style.display = "none";
-    } else {
-        calView.style.display = "none";
-        listView.style.display = "inline-block";
-    }
-};*/
 
 /* click listener for small nav icon to display nav list
 *  Also to remove nav list
@@ -80,7 +64,7 @@ function getEvents(token,sltFilters,$events,$loader) {
         console.log("number of events pulled from EventBrite API: "+res.events.length);
         if(res.events.length) {
             let s = "<ul class='eventList'>";
-   
+
             //create an array of event by month
             //store those event in the local storage
             sessionStorage.setItem('briteEventsByMonth', JSON.stringify(briteEventByMonthObject(res.events)));
@@ -114,9 +98,9 @@ function getEvents(token,sltFilters,$events,$loader) {
             $loader.css('display','none');
             alert("Sorry, there are no upcoming events matching your filters...");
             location.reload();
-            
+
         }
-    });  
+    });
 
 };
 
@@ -127,10 +111,10 @@ function getSelectedFilters() {
     let str = $(".submit_filters").serialize();
     let selectFilters = '&';
     selectFilters += str;
-    selectFilters +="&";     
+    selectFilters +="&";
 
     return selectFilters;
-  
+
 };
 
 //Display events
@@ -138,7 +122,7 @@ $(document).ready(function() {
 
     let token = 'XRO476MORTABZO23QCXJ';
     let $events = $("#events");
-    let $loader = $('.loader'); 
+    let $loader = $('.loader');
     let tag_default = 'q=information--tech&';
 
     //Display events by default fitlers
@@ -184,4 +168,19 @@ function briteEventByMonthObject(events) {
     return byMonth;
 }
 
-
+$send.click(function(e){
+    e.preventDefault();
+    let id = $(this).closest(".submit-container").find(".success-modal").attr("id");
+    switch(id) {
+        case 'signupSuccess':
+            alert("Thanks for signing up!");
+            break;
+        case 'loginSuccess':
+            alert("You're logged in!");
+            break;
+        case 'submitSuccess':
+            alert("Your event has been added!");
+            break;
+    }
+    $(location).attr('href','./index.html');
+});
