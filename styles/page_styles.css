@@ -920,7 +920,9 @@ a:link {
 .profile {
   text-align: center;
   width: 220px;
+  max-width: 220px;
   height: 270px;
+  max-height: 270px;
   cursor: pointer;
 }
 
