@@ -182,5 +182,7 @@ $send.click(function(e){
             alert("Your event has been added!");
             break;
     }
-    $(location).attr('href','./index.html');
+   // $(location).attr('href','./index.html');
+    location.href = './index.html';
+
 });
