@@ -170,7 +170,34 @@ function briteEventByMonthObject(events) {
 
 $send.click(function(e){
     e.preventDefault();
-    let id = $(this).closest(".submit-container").find(".success-modal").attr("id");
+    validateForm(e);
+});
+
+function validateForm(e) {
+    let em = document.forms["submit"]["email"].value;
+    let pw = document.forms["submit"]["psw"].value;
+    let pwRepeat = document.forms["submit"]["psw-repeat"].value;
+    /*let eName = document.forms["submit"]["event-name"].value;
+    let eDate = document.forms["submit"]["event-date"].value;
+    let eTime = document.forms["submit"]["event-time"].value;
+    let eLoc = document.forms["submit"]["event-location"].value;
+    let eDeets = document.forms["submit"]["event-details"].value;*/
+    if (em == "") {
+        alert("Email must be filled out");
+        return false;
+    } else if (pw == "") {
+        alert("Password must be filled out");
+        return false;
+    } else if (pwRepeat == ""){
+        alert("Please repeat your password");
+        return false;
+    } else {
+        sendForm(e);
+    }
+}
+
+function sendForm(e) {
+    let id = $(".success-modal").attr("id");
     switch(id) {
         case 'signupSuccess':
             alert("Thanks for signing up!");
@@ -183,4 +210,4 @@ $send.click(function(e){
             break;
     }
     $(location).attr('href','./index.html');
-});
+}
