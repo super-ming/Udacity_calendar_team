@@ -1029,6 +1029,9 @@ form {
     color: #2A3840;
 }
 
+.submit-container b {
+    color: #2A3840;
+}
 .submit-container > input, .event_time > input {
     flex: 1 1 40px;
     text-indent: 10px;
@@ -1123,8 +1126,6 @@ input[type=submit] {
 .submit-form {
     border:1px solid #ccc;
     border-radius: 5px;
-    font-family: 'Mina', sans-serif;
-    color: #2A3840;
 }
 /*using same wrapper for sign up, login, submission page*/
 .submit-wrapper {
