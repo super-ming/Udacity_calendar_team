@@ -24,24 +24,24 @@ h2 {
 }
 
 h4 {
-    font-family: 'Mina', sans-serif; 
+    font-family: 'Mina', sans-serif;
     font-weight: bold;
     color: #353535FF;
 /*    font-size: 100%;
 */}
 
 legend {
-    font-family: 'Mina', sans-serif; 
+    font-family: 'Mina', sans-serif;
     font-weight: bold;
     font-size: 130%;
     padding-left: 2px;
     padding-right: 2px;
     color:#000000FF;
-    border: none;   
+    border: none;
 }
 
 .filter-item{
-    font-family: 'Mina', sans-serif; 
+    font-family: 'Mina', sans-serif;
     color: #5B5B5BFF;
     font-size: 85%;
 }
@@ -107,8 +107,8 @@ b {
     color:#20DEDCFF;
 }
 
-.uppercase { 
-    text-transform: uppercase; 
+.uppercase {
+    text-transform: uppercase;
 }
 
 #free-style {
@@ -812,7 +812,7 @@ input:checked + .slider:after {
   grid-gap: 1em;
   grid-template-columns: 3fr 1fr;
   grid-template-areas:  "  us       us   "
-                        " team    contact" 
+                        " team    contact"
                         " team     .     ";
   margin: 2% 5%;
 }
@@ -822,7 +822,7 @@ input:checked + .slider:after {
   display: grid;
   grid-gap: 1em;
   grid-template-areas:  "   us    "
-                        "  team   " 
+                        "  team   "
                         " contact ";
   margin: 2% 5%;
   }
@@ -873,12 +873,12 @@ a:link {
 
 #roster {
   display: grid;
- 
+
   grid-gap: .5em;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:  "row1"
                         "row2"
-                        "row3"; 
+                        "row3";
 }
 
 
@@ -949,7 +949,7 @@ a:link {
   margin-left: auto;
   margin-right: auto;
   max-width: 150px;
-  
+
 }
 
 #profile-image:hover {
@@ -989,6 +989,12 @@ form {
   font-family: 'Arial';
   font-family: 'Work Sans';
   font-size: 90%;
+}
+
+/* Sign up page */
+.submit-form {
+    border:1px solid #ccc;
+    border-radius: 5px;
 }
 
 /* Sign up page */
@@ -1108,8 +1114,133 @@ textarea {
 }
 
 input[type=submit] {
-     font-family: 'Mina', sans-serif; 
+     font-family: 'Mina', sans-serif;
      font-size: 15px;
 
 }
 
+/* Sign up page */
+
+=======
+/* Sign up page */
+
+>>>>>>> upstream/master
+/*using same wrapper for sign up, login, submission page*/
+.submit-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            'header'
+            'main'
+            'footer';
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.submit-main {
+    padding: 26px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-family: 'Mina', sans-serif;
+    color: #2A3840;
+}
+
+.submit-container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px;
+}
+
+.submit-container > input, .event_time > input {
+    flex: 1 1 40px;
+    text-indent: 10px;
+    font-family: 'Mina', sans-serif;
+}
+
+
+input[type=text], input[type=password], .event_time > input {
+  width: 40%;
+  height: 40px;
+  padding:0px;
+  margin: 2px 0 20px 0;
+  border: none;
+  background: #f1f1f1;
+  min-width: 300px;
+
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.signupbtn {
+  background-color: #1BB24E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+}
+
+/* Login page*/
+.loginbtn {
+    background-color: #1BB24E;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/*submission page*/
+
+input[name="event-details"]{
+    width: 100%;
+    min-height: 300px;
+
+}
+
+.addeventbtn {
+    background-color: #8FBEDB;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+#timezone {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 15px;
+    height: 40px;
+    background-color: #fafafa;
+}
+
+input[name="event-time"], #timezone {
+    flex-direction: row;
+}
+
+textarea {
+    width: 90%;
+    min-height: 400px;
+    background: #f1f1f1;
+    font-family: 'Mina', sans-serif;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+input[type=submit] {
+     font-family: 'Mina', sans-serif;
+     font-size: 15px;
+
+}
