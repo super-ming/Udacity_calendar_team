@@ -18,7 +18,7 @@ $(document).ready(function(){
     } else if (person === 'Alex Tran') {
     $('#Alex-Tran-modal').css('display', 'block');
     } else {
-        if (this.hasAttribute('style') === true) {
+        if (this.hasAttribute('style')) {
         $(this).removeAttr('style');
         } else {
         let thisRow = $(this).parent().attr('id');
