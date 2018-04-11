@@ -1,7 +1,5 @@
 $(document).ready(function(){
   
-  
-  
   let person;
   let thisRow;
 
