@@ -822,10 +822,10 @@ input:checked + .slider:after {
   #about-container {
   display: grid;
   grid-gap: 1em;
-  grid-template-areas:  "   us    "
-                        "  team   " 
-                        " contact ";
-  margin: 2% 5%;
+  grid-template-areas:  "   us        us  "
+                        "  team      team " 
+                        " contact contact ";
+  margin: 2% auto;
   }
 
   .about-modal-content {
