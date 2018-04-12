@@ -874,9 +874,6 @@ a:link {
 
 #roster {
   display: grid;
-
-  grid-gap: .5em;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:  "row1"
                         "row2"
                         "row3";
