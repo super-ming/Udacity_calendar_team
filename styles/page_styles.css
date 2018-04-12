@@ -916,10 +916,10 @@ a:link {
 
 .profile {
   cursor: pointer;
-  margin: 0.5em;
   min-width: 220px;
   max-width: 220px;
   min-height: 270px;
+  padding: 0.5em;
   max-height: 270px;
   text-align: center; 
 }
