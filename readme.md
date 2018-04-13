@@ -63,7 +63,7 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Eventbrite APIv3](https://www.eventbrite.com/developer/v3/) - To populate our data
-<!-->
+<!--
 * [Google Maps API](https://developers.google.com/maps/) - For the map in the details page
 -->
 
