@@ -182,5 +182,12 @@ $send.click(function(e){
             alert("Your event has been added!");
             break;
     }
-    window.location.assign("https://htmlpreview.github.io/?https://github.com/RJGrunau/Udacity_calendar_team/blob/master/index.html");
+    if(location.search) {
+        let searchStr=location.search;
+        searchStr = searchStr.substring(0,searchStr.lastIndexOf('/'));
+        searchStr = searchStr.concat('/index.html');
+        location.search = searchStr;
+    } else {
+        $(location).attr('href','./index.html');
+    }
 });

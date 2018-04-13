@@ -744,6 +744,7 @@ input:checked + .slider:after {
     top: 20%;
     left: 0;
     right: 0;
+    z-index: 5;
 }
 
 /* Safari */
@@ -767,6 +768,7 @@ input:checked + .slider:after {
     background-color: white;
     width: 50vw;
 }
+
 
 .modal .bio {
   margin: 2em;
@@ -821,10 +823,10 @@ input:checked + .slider:after {
   #about-container {
   display: grid;
   grid-gap: 1em;
-  grid-template-areas:  "   us    "
-                        "  team   "
-                        " contact ";
-  margin: 2% 5%;
+  grid-template-areas:  "   us        us  "
+                        "  team      team "
+                        " contact contact ";
+  margin: 2% auto;
   }
 
   .about-modal-content {
@@ -862,8 +864,7 @@ a:link {
 }
 
 #about-us > h1 {
-  font-family: 'Georgia';
-  font-family: 'Mina';
+  font-family: 'Mina', sans-serif;
   font-size: 200%;
   line-height: 130%;
   letter-spacing: .22em;
@@ -873,14 +874,10 @@ a:link {
 
 #roster {
   display: grid;
-
-  grid-gap: .5em;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:  "row1"
                         "row2"
                         "row3";
 }
-
 
 .roster-row {
   display: flex;
@@ -918,10 +915,13 @@ a:link {
 }
 
 .profile {
-  text-align: center;
-  width: 220px;
-  height: 270px;
   cursor: pointer;
+  min-width: 220px;
+  max-width: 220px;
+  min-height: 270px;
+  padding: 0.5em;
+  max-height: 270px;
+  text-align: center; 
 }
 
 /* .profile:hover {
@@ -931,17 +931,16 @@ a:link {
 .focus {
   display: inline-block;
   text-align: left;
-  font-family: 'Arial';
-  font-family: 'Work Sans';
+  font-family: 'Mina', sans-serif;
   font-size: 112%;
 }
 
 .name {
-  font-family: 'Work Sans';
-  font-size: 130%;
+  font-family: 'Mina', sans-serif;
+  font-size: 135%;
 }
 
-#profile-image {
+.profile-image {
   border: .1em solid;
   border-color: rgba(222, 236, 244, .6);
   border-radius: 50%;
@@ -952,7 +951,7 @@ a:link {
 
 }
 
-#profile-image:hover {
+.profile-image:hover {
   transform: scale(1.11);
 }
 
@@ -960,27 +959,32 @@ a:link {
 #about-contact > h2 {
   line-height: 130%;
   text-align: center;
-  /*font-fmaily: 'Georgia';*/
-  font-family: 'Mina';
+  font-family: 'Mina', sans-serif;
   font-size: 200%;}
 
 #about-team > h3 {
-  font-family: 'Work Sans';
+  font-family: 'Mina', sans-serif;
   text-align: center;
 }
 
 #about-us,
 .about-contact > #contact-container,
 form {
-  font-family: 'Arial';
-  font-family: 'Signika';
+/* font-family: 'Signika';
   font-family: 'Maven Pro';
-  font-family: 'Work Sans';
+  font-family: 'Work Sans';*/
+  font-family: 'Mina', sans-serif;
   font-size: 120%;
 }
 
 #send {
-  cursor: pointer;
+   background-color: #1BB24E;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   cursor: pointer;
+   opacity: 0.9;
+/*   cursor: pointer;
   display: block;
   display: inline-block;
   border-radius: .5em;
@@ -988,21 +992,21 @@ form {
   border-shadow: 1em;
   font-family: 'Arial';
   font-family: 'Work Sans';
-  font-size: 90%;
+  font-size: 90%; */
 }
 
-<<<<<<< HEAD
+input[id='name'],
+input[id='email'],
+textarea[id='message'] {
+  font-family: 'Mina', sans-serif;
+     font-size: 15px;
+}
 
 /* Sign up page */
 .submit-form {
     border:1px solid #ccc;
     border-radius: 5px;
 }
-||||||| merged common ancestors
-
-
-/* Sign up page */
-
 /*using same wrapper for sign up, login, submission page*/
 .submit-wrapper {
     display: grid;
@@ -1031,6 +1035,7 @@ form {
     display: flex;
     flex-flow: column nowrap;
     padding: 10px;
+    background-color: rgba(207, 207, 207, 0.8);
 }
 
 .submit-container > input, .event_time > input {
@@ -1088,133 +1093,7 @@ input[name="event-details"]{
 }
 
 .addeventbtn {
-    background-color: #8FBEDB;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-#timezone {
-    display: inline-block;
-    width: 100px;
-    margin-bottom: 15px;
-    height: 40px;
-    background-color: #fafafa;
-}
-
-input[name="event-time"], #timezone {
-    flex-direction: row;
-}
-
-textarea {
-    width: 90%;
-    min-height: 400px;
-    background: #f1f1f1;
-    font-family: 'Mina', sans-serif;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-input[type=submit] {
-     font-family: 'Mina', sans-serif;
-     font-size: 15px;
-
-}
-
-/* Sign up page */
-
-=======
-/* Sign up page */
-
->>>>>>> upstream/master
-/*using same wrapper for sign up, login, submission page*/
-.submit-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-            'header'
-            'main'
-            'footer';
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-.submit-main {
-    padding: 26px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    font-family: 'Mina', sans-serif;
-    color: #2A3840;
-}
-
-.submit-container {
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 10px;
-}
-
-.submit-container > input, .event_time > input {
-    flex: 1 1 40px;
-    text-indent: 10px;
-    font-family: 'Mina', sans-serif;
-}
-
-
-input[type=text], input[type=password], .event_time > input {
-  width: 40%;
-  height: 40px;
-  padding:0px;
-  margin: 2px 0 20px 0;
-  border: none;
-  background: #f1f1f1;
-  min-width: 300px;
-
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-.signupbtn {
-  background-color: #1BB24E;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-.cancelbtn {
-  padding: 14px 20px;
-}
-
-/* Login page*/
-.loginbtn {
-    background-color: #1BB24E;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-/*submission page*/
-
-input[name="event-details"]{
-    width: 100%;
-    min-height: 300px;
-
-}
-
-.addeventbtn {
-    background-color: #8FBEDB;
+    background-color: #20DEDCFF;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
