@@ -71,8 +71,7 @@ Add additional notes about how to deploy this on a live system
 
 **Jacqueline Bostow** - *Organized group meetings, Event calendar creation, Responsive layout* - (https://github.com/jnbostow)
 
-**Jinjin Ge** - *Event data extraction, Event list view creation, Event filter functionality
-* - (https://github.com/JaneEvans)
+**Jinjin Ge** - *Event data extraction, Event list view creation, Event filter functionality* - (https://github.com/JaneEvans)
 
 **Robert Grunau** - *Set up GitHub repogitry, Backend* - (https://github.com/RJGrunau)
 
