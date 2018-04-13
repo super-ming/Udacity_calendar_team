@@ -19,19 +19,19 @@ What things you need to install the software and how to install them
 
 You will need to install a text editor of your choice in order to make changes to the code on your local machine. Here is a few popular text editors.
 
-Sublime Text
-https://www.sublimetext.com/
+<li>Sublime Text
+https://www.sublimetext.com/</li>
 
-Atom
-https://atom.io/
+<li>Atom
+https://atom.io/</li>
 
-Visual Studio Code
-https://code.visualstudio.com/
+<li>Visual Studio Code
+https://code.visualstudio.com/</li>
 
 You may also want to use a variable of Git for version control. You will likely make various changes to your code and will want to store different versions to experiment with.
 
-Git
-https://git-scm.com/
+<li>Git
+https://git-scm.com/</li>
 
 
 <!--
@@ -83,8 +83,6 @@ Add additional notes about how to deploy this on a live system
 - Filter options by date, price, neighborhood, and event type
 - Toggle between list view and calendar view
 - Submit new events after logging in
-## How to use
-
 
 ## Built With
 
