@@ -170,7 +170,7 @@ function briteEventByMonthObject(events) {
 
 $send.click(function(e){
     e.preventDefault();
-    let id = $(this).closest(".submit-container").find(".success-modal").attr("id");
+    let id = $(".success-modal").attr("id");
     switch(id) {
         case 'signupSuccess':
             alert("Thanks for signing up!");
