@@ -7,6 +7,7 @@ This is a website that provides information on local Tech Events.
 ## Motivation
 
 A group of scholars in the 2018 Grow with Google Scholarship: Front-End Web Development program came together to work on a group project as an opportunity to test out their coding skills. The only way to become better at something is to practice, practice, and practice some more! The project was also aimed to help the participants gain experience collaborating with others using tools such as Github and Git version control.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -15,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
+
 You will need to install a text editor of your choice in order to make changes to the code on your local machine. Here is a few popular text editors.
 
 Sublime Text
@@ -32,7 +33,7 @@ You may also want to use a variable of Git for version control. You will likely 
 Git
 https://git-scm.com/
 
-```
+
 <!--
 ### Installing
 
@@ -107,7 +108,7 @@ Add additional notes about how to deploy this on a live system
 
 **Jacob Olson** - *About page* - (https://github.com/jacobwolson)
 
-**Alex Tran** - *UX Advisor* -
+**Alex Tran** - *UX Advisor*
 
 **Yuka Mullen** - *Event Details page, Color scheme* - (https://github.com/Quiwah)
 
