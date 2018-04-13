@@ -2,8 +2,11 @@
 
 This is a website that provides information on local Tech Events.
 
-<!-- I think we can add these parts once the database is done.
+<!-- I think we can add these parts once the database is done. -->
 
+## Motivation
+
+A group of scholars in the 2018 Grow with Google Scholarship: Front-End Web Development program came together to work on a group project as an opportunity to test out their coding skills. The only way to become better at something is to practice, practice, and practice some more! The project was also aimed to help the participants gain experience collaborating with others using tools such as Github and Git version control.
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -13,9 +16,24 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
-```
+You will need to install a text editor of your choice in order to make changes to the code on your local machine. Here is a few popular text editors.
 
+Sublime Text
+https://www.sublimetext.com/
+
+Atom
+https://atom.io/
+
+Visual Studio Code
+https://code.visualstudio.com/
+
+You may also want to use a variable of Git for version control. You will likely make various changes to your code and will want to store different versions to experiment with.
+
+Git
+https://git-scm.com/
+
+```
+<!--
 ### Installing
 
 A step by step series of examples that tell you have to get a development env running
@@ -59,13 +77,23 @@ Give an example
 Add additional notes about how to deploy this on a live system
 
 -->
+## Features
+
+- Filter options by date, price, neighborhood, and event type
+- Toggle between list view and calendar view
+- Submit new events after logging in
+## How to use
+
 
 ## Built With
 
-* [Eventbrite APIv3](https://www.eventbrite.com/developer/v3/) - To populate our data
-<!--
+* [Eventbrite APIv3](https://www.eventbrite.com/developer/v3/) - To populate event data
+
 * [Google Maps API](https://developers.google.com/maps/) - For the map in the details page
--->
+
+* jQuery
+  https://jquery.com/
+
 
 ## Authors
 
@@ -79,7 +107,7 @@ Add additional notes about how to deploy this on a live system
 
 **Jacob Olson** - *About page* - (https://github.com/jacobwolson)
 
-**Alex Tran** - *UX Advisor* - 
+**Alex Tran** - *UX Advisor* -
 
 **Yuka Mullen** - *Event Details page, Color scheme* - (https://github.com/Quiwah)
 
